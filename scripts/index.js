@@ -25,8 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Toggle mobile menu
   menuToggle.addEventListener("click", () => {
-    navMenu.classList.toggle("open");
-  });
+   const isOpen = navMenu.classList.toggle("open");
+   menuToggle.setAttribute("aria-expanded", isOpen);
+});
 
   function renderCourses(filter = "ALL") {
     courseList.innerHTML = "";
@@ -43,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const totalCredits = filtered.reduce((sum, c) => sum + c.credits, 0);
-    totalCreditsText.textContent = `The total credits for course listed above is ${totalCredits}`;
+    totalCreditsText.textContent = `The total credits for courses listed above is ${totalCredits}`;
   }
 
   // Button Events
