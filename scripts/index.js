@@ -2,11 +2,11 @@
 // Course Data
 // -------------------------
 const courses = [
-  { code: "WDD 130", credits: 2 },
-  { code: "CSE 111", credits: 2 },
-  { code: "WDD 131", credits: 2 },
-  { code: "WDD 231", credits: 2 },
-  { code: "CSE 110", credits: 2 },
+  { code: "WDD 130", credits: 2, completed: true},
+  { code: "CSE 111", credits: 2, completed: true},
+  { code: "WDD 131", credits: 2, completed: true},
+  { code: "WDD 231", credits: 2, completed: true},
+  { code: "CSE 110", credits: 2, completed: true},
 ];
 
 // -------------------------
@@ -38,7 +38,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     filtered.forEach(course => {
       const div = document.createElement("div");
-      div.classList.add("course-item");
+      if (course.completed) {
+        div.classList.add("completed");
+      } else {
+        div.classList.add("not-completed");
+      }
       div.textContent = course.code;
       courseList.appendChild(div);
     });

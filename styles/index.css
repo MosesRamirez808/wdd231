@@ -1,5 +1,5 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'merriweather sans', sans-serif;
   color: #222;
   margin: 0;
   background-color: #f8f8f8;
@@ -99,7 +99,7 @@ main h1 {
 .about-text p {
   padding: 1rem;
   text-align: justify;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 /* Fixed photo styling */
@@ -152,6 +152,7 @@ main h1 {
   background-color: #bbb;
 }
 
+
 .course-list {
   display: flex;
   justify-content: center;
@@ -165,6 +166,19 @@ main h1 {
   padding: 0.5rem 1rem;
   min-width: 100px;
 }
+
+.completed {
+  background-color: #c8f7c5;
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
+.not-completed {
+  background-color: #f7c5c5; 
+  border: 1px solid #999;
+  border-radius: 5px;
+}
+
 
 #totalCreditsText {
   font-size: 1.5rem;
