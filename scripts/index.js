@@ -30,26 +30,29 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
   function renderCourses(filter = "ALL") {
-    courseList.innerHTML = "";
-    let filtered = [];
+  courseList.innerHTML = "";
+  let filtered = [];
 
-    if (filter === "ALL") filtered = courses;
-    else filtered = courses.filter(c => c.code.startsWith(filter));
+  if (filter === "ALL") filtered = courses;
+  else filtered = courses.filter(c => c.code.startsWith(filter));
 
-    filtered.forEach(course => {
-      const div = document.createElement("div");
-      if (course.completed) {
-        div.classList.add("completed");
-      } else {
-        div.classList.add("not-completed");
-      }
-      div.textContent = course.code;
-      courseList.appendChild(div);
-    });
+  filtered.forEach(course => {
+    const div = document.createElement("div");
+    div.textContent = course.code;
+    if (course.completed) {
+      div.classList.add("completed");
+    } else {
+      div.classList.add("not-completed");
+    }
+    courseList.appendChild(div);
+  });
 
-    const totalCredits = filtered.reduce((sum, c) => sum + c.credits, 0);
-    totalCreditsText.textContent = `The total credits for courses listed above is ${totalCredits}`;
-  }
+  const completedCredits = filtered
+    .filter(c => c.completed)
+    .reduce((sum, c) => sum + c.credits, 0);
+
+  totalCreditsText.textContent = `Total Completed Credits: ${completedCredits}`;
+}
 
   // Button Events
   allBtn.addEventListener("click", () => renderCourses("ALL"));
