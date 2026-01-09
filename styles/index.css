@@ -18,9 +18,11 @@ header {
 
 .identifier {
   position: absolute;
-  align-items: left;
-  padding: 1.5rem;
-} 
+  display: flex;
+  align-items:center; 
+  padding-left: 2rem;
+}
+
 
 .site-title {
   display: flex;
