@@ -66,3 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial Render
   renderCourses("ALL");
 });
+
+const waitTwoSeconds = async () => {
+  try {
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log("Done waiting!");
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+waitTwoSeconds();
