@@ -6,11 +6,11 @@ body {
   font-family: system-ui, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #675959;
 }
 
 header, footer {
-  background-color: #003366;
+  background-color: #38393b;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -27,7 +27,7 @@ main {
 }
 
 section {
-  background-color: white;
+  background-color: rgb(171, 149, 149);
   border-radius: 8px;
   padding: 1rem;
   text-align: center;
