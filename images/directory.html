@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Directory | Towneship Chamber of Commerce</title>
+
+  <link rel="icon" href="images/github-icon.png">
+  <link rel="stylesheet" href="styles/chamber.css">
+  <script src="scripts/chamber.js" defer></script>
+</head>
+
+<body>
+<header>
+  <h1>Towneship Chamber of Commerce</h1>
+  <nav class="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="discover.html">Discover</a>
+    <a href="directory.html">Directory</a>
+    <a href="join.html">Join</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Business Directory</h2>
+
+  <div class="directory-controls">
+    <button id="gridView">Grid</button>
+    <button id="listView">List</button>
+  </div>
+
+  <section id="directory-container" class="grid-view">
+    <!-- Businesses populated via JSON + Fetch -->
+  </section>
+</main>
+
+<footer>
+  <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
+</body>
+</html>

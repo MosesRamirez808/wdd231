@@ -1,0 +1,72 @@
+
+
+body {
+margin: 0;
+font-family: Arial, sans-serif;
+background-color: #f2f2f2;
+color: #222;
+}
+
+
+.site-header {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 1rem;
+background-color: #e0e0e0;
+}
+
+
+.header-left {
+display: flex;
+align-items: center;
+gap: 0.5rem;
+}
+
+
+.site-name {
+font-weight: bold;
+}
+
+
+.menu-toggle {
+display: none;
+font-size: 1.5rem;
+background: none;
+border: none;
+}
+
+
+.nav-menu ul {
+display: flex;
+list-style: none;
+gap: 1rem;
+margin: 0;
+padding: 0;
+}
+
+
+.nav-menu a {
+text-decoration: none;
+color: #000;
+}
+
+
+.hero {
+height: 250px;
+background: #ddd;
+position: relative;
+}
+
+
+.hero-cta {
+position: absolute;
+bottom: 1rem;
+right: 1rem;
+padding: 0.5rem 1rem;
+}
+
+
+.page-title {
+margin: 1rem;
+}
