@@ -1,72 +1,300 @@
-
-
+/* -----------------------
+   Base Styles
+-------------------------- */
 body {
-margin: 0;
-font-family: Arial, sans-serif;
-background-color: #f2f2f2;
-color: #222;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #E6F2E6; /* Light Sage background */
+  color: #1B3A2D; /* Dark Forest Green text */
 }
 
-
+/* -----------------------
+   Header / Navigation
+-------------------------- */
 .site-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 1rem;
-background-color: #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #A8D5BA; /* Fern Green header */
 }
-
 
 .header-left {
-display: flex;
-align-items: center;
-gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
-
 
 .site-name {
-font-weight: bold;
+  font-weight: bold;
+  color: #1B3A2D;
 }
-
 
 .menu-toggle {
-display: none;
-font-size: 1.5rem;
-background: none;
-border: none;
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #1B3A2D;
 }
-
 
 .nav-menu ul {
-display: flex;
-list-style: none;
-gap: 1rem;
-margin: 0;
-padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
 }
-
 
 .nav-menu a {
-text-decoration: none;
-color: #000;
+  text-decoration: none;
+  color: #1B3A2D;
+  padding: 0.5rem 0.75rem;
+  transition: background-color 0.3s, color 0.3s;
 }
 
+.nav-menu a.active,
+.nav-menu a:hover {
+  background-color: #2F5D45; /* Dark Moss hover */
+  border-radius: 4px;
+  color: #F0FFF0; /* Pale text on hover */
+}
 
+/* -----------------------
+   Hero Section
+-------------------------- */
 .hero {
-height: 250px;
-background: #ddd;
-position: relative;
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  display: block;
+  background-color: #A8D5BA; /* Fern Green fallback */
+  padding: 0;
 }
 
+.hero-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(85%); /* Darken for contrast with text/button */
+}
 
 .hero-cta {
-position: absolute;
-bottom: 1rem;
-right: 1rem;
-padding: 0.5rem 1rem;
+  position: absolute;
+  right: 5%;
+  bottom: 20%;
+  padding: 0.75rem 1.5rem;
+  background-color: #4C7C59; /* Olive button */
+  border: 2px solid #2F5D45; /* Moss border */
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #F0FFF0; /* Pale text */
+  transition: background-color 0.3s, border-color 0.3s;
 }
 
+.hero-cta:hover {
+  background-color: #2F5D45; /* Moss hover */
+  border-color: #1B3A2D; /* Darker border on hover */
+}
 
+/* -----------------------
+   Page Title
+-------------------------- */
 .page-title {
-margin: 1rem;
+  margin: 1rem;
+  color: #1B3A2D;
+}
+
+/* -----------------------
+   Info Grid (Events / Weather / Forecast)
+-------------------------- */
+.info-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  background-color: #E6F2E6; /* Light Sage */
+  padding: 1rem;
+  color: #1B3A2D;
+}
+
+.card h2 {
+  background-color: #4C7C59; /* Olive header */
+  color: #F0FFF0; /* Pale text */
+  padding: 0.5rem;
+  margin: -1rem -1rem 1rem -1rem;
+  font-size: 1.25rem;
+}
+
+/* -----------------------
+   Weather Text
+-------------------------- */
+.weather p,
+.forecast p {
+  margin: .50rem 0;
+  color: #1B3A2D;
+}
+
+/* -----------------------
+   Business Spotlights
+-------------------------- */
+.spotlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.business-card {
+  background-color: #E6F2E6;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 4px;
+  color: #1B3A2D;
+}
+
+.business-card h3 {
+  margin-top: 0;
+}
+
+/* -----------------------
+   Footer
+-------------------------- */
+footer {
+  background-color: #4C7C59; /* Olive footer */
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #F0FFF0;
+}
+
+/* -----------------------
+   Buttons, hero image, other elements
+-------------------------- */
+.nav-menu ul {
+  align-items: center;
+}
+
+#mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  color: #1B3A2D;
+}
+
+/* -----------------------
+   Responsive Design
+-------------------------- */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+  }
+
+  .nav-menu.open {
+    display: block;
+    background-color: #A8D5BA;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 0.75rem;
+    text-align: center;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Hero image brightness adjustment for overlay readability */
+.hero-image {
+  filter: brightness(85%);
+}
+
+/* Hero CTA hover for AAA contrast */
+.hero-cta:hover {
+  background-color: #2F5D45; /* Dark moss */
+  border-color: #1B3A2D; /* Dark green */
+}
+
+/* Footer columns for full AAA contrast */
+.site-footer {
+  background-color: #4C7C59; /* Olive footer */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  color: #F0FFF0;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-left p,
+.footer-right p {
+  margin: 0.2rem 0;
+  line-height: 1.3;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-center img {
+  width: 50px;
+  height: 50px;
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+
+.footer-center img:hover {
+  filter: brightness(1.2);
+}
+
+/* Responsive footer stacking */
+@media (max-width: 600px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    min-width: auto;
+  }
+  .footer-center {
+    justify-content: center;
+  }
 }
