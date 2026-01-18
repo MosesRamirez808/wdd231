@@ -1,22 +1,22 @@
-/* -----------------------
-   Base Styles
--------------------------- */
+/* ======================================================
+   BASE STYLES
+====================================================== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #E6F2E6; /* Light Sage background */
-  color: #1B3A2D; /* Dark Forest Green text */
+  background-color: #E6F2E6; /* Light Sage */
+  color: #1B3A2D; /* Dark Forest Green */
 }
 
-/* -----------------------
-   Header / Navigation
--------------------------- */
+/* ======================================================
+   HEADER & NAVIGATION
+====================================================== */
 .site-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #A8D5BA; /* Fern Green header */
+  background-color: #A8D5BA; /* Fern Green */
 }
 
 .header-left {
@@ -41,6 +41,7 @@ body {
 
 .nav-menu ul {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 1rem;
   margin: 0;
@@ -56,22 +57,20 @@ body {
 
 .nav-menu a.active,
 .nav-menu a:hover {
-  background-color: #2F5D45; /* Dark Moss hover */
+  background-color: #2F5D45; /* Dark Moss */
+  color: #F0FFF0;
   border-radius: 4px;
-  color: #F0FFF0; /* Pale text on hover */
 }
 
-/* -----------------------
-   Hero Section
--------------------------- */
+/* ======================================================
+   HERO SECTION
+====================================================== */
 .hero {
   position: relative;
   width: 100%;
   height: 300px;
   overflow: hidden;
-  display: block;
-  background-color: #A8D5BA; /* Fern Green fallback */
-  padding: 0;
+  background-color: #A8D5BA;
 }
 
 .hero-image {
@@ -79,7 +78,7 @@ body {
   height: 300px;
   object-fit: cover;
   object-position: center 20%;
-  filter: brightness(85%); /* Darken for contrast with text/button */
+  filter: brightness(85%);
 }
 
 .hero-cta {
@@ -87,31 +86,31 @@ body {
   right: 5%;
   bottom: 20%;
   padding: 0.75rem 1.5rem;
-  background-color: #4C7C59; /* Olive button */
-  border: 2px solid #2F5D45; /* Moss border */
+  background-color: #4C7C59; /* Olive */
+  border: 2px solid #2F5D45;
   border-radius: 8px;
-  cursor: pointer;
   font-weight: bold;
-  color: #F0FFF0; /* Pale text */
+  color: #F0FFF0;
+  cursor: pointer;
   transition: background-color 0.3s, border-color 0.3s;
 }
 
 .hero-cta:hover {
-  background-color: #2F5D45; /* Moss hover */
-  border-color: #1B3A2D; /* Darker border on hover */
+  background-color: #2F5D45;
+  border-color: #1B3A2D;
 }
 
-/* -----------------------
-   Page Title
--------------------------- */
+/* ======================================================
+   PAGE TITLE
+====================================================== */
 .page-title {
   margin: 1rem;
   color: #1B3A2D;
 }
 
-/* -----------------------
-   Info Grid (Events / Weather / Forecast)
--------------------------- */
+/* ======================================================
+   INFO GRID (EVENTS / WEATHER / FORECAST)
+====================================================== */
 .info-grid {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
@@ -120,31 +119,29 @@ body {
 }
 
 .card {
-  background-color: #E6F2E6; /* Light Sage */
+  background-color: #E6F2E6;
   padding: 1rem;
   color: #1B3A2D;
+  border: 2px solid #2D522D;
+  border-radius: 4px;
 }
 
 .card h2 {
-  background-color: #4C7C59; /* Olive header */
-  color: #F0FFF0; /* Pale text */
+  background-color: #4C7C59;
+  color: #F0FFF0;
   padding: 0.5rem;
   margin: -1rem -1rem 1rem -1rem;
   font-size: 1.25rem;
 }
 
-/* -----------------------
-   Weather Text
--------------------------- */
 .weather p,
 .forecast p {
-  margin: .50rem 0;
-  color: #1B3A2D;
+  margin: 0.5rem 0;
 }
 
-/* -----------------------
-   Business Spotlights
--------------------------- */
+/* ======================================================
+   BUSINESS SPOTLIGHTS
+====================================================== */
 .spotlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -158,30 +155,86 @@ body {
   text-align: center;
   border-radius: 4px;
   color: #1B3A2D;
+  border: 2px solid #1A331A;
 }
 
 .business-card h3 {
   margin-top: 0;
 }
 
-/* -----------------------
-   Footer
--------------------------- */
+/* ======================================================
+   DIRECTORY VIEWS
+====================================================== */
+#directory-container.grid-view {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+#directory-container.list-view {
+  display: block;
+}
+
+.list-view .business-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ======================================================
+   FOOTER
+====================================================== */
 footer {
-  background-color: #4C7C59; /* Olive footer */
+  background-color: #4C7C59;
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
   color: #F0FFF0;
 }
 
-/* -----------------------
-   Buttons, hero image, other elements
--------------------------- */
-.nav-menu ul {
+.site-footer {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  font-size: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-left p,
+.footer-right p {
+  margin: 0.2rem 0;
+  line-height: 1.3;
+}
+
+.footer-center {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-center img {
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.footer-center img:hover {
+  filter: brightness(1.2);
+}
+
+/* ======================================================
+   BUTTONS & TOGGLES
+====================================================== */
 #mode-toggle {
   background: none;
   border: none;
@@ -191,9 +244,9 @@ footer {
   color: #1B3A2D;
 }
 
-/* -----------------------
-   Responsive Design
--------------------------- */
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
@@ -229,71 +282,18 @@ footer {
   }
 }
 
-/* Hero image brightness adjustment for overlay readability */
-.hero-image {
-  filter: brightness(85%);
-}
-
-/* Hero CTA hover for AAA contrast */
-.hero-cta:hover {
-  background-color: #2F5D45; /* Dark moss */
-  border-color: #1B3A2D; /* Dark green */
-}
-
-/* Footer columns for full AAA contrast */
-.site-footer {
-  background-color: #4C7C59; /* Olive footer */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
-  color: #F0FFF0;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-left,
-.footer-center,
-.footer-right {
-  flex: 1;
-  min-width: 180px;
-}
-
-.footer-left p,
-.footer-right p {
-  margin: 0.2rem 0;
-  line-height: 1.3;
-}
-
-.footer-center {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-}
-
-.footer-center img {
-  width: 50px;
-  height: 50px;
-  transition: filter 0.3s ease;
-  cursor: pointer;
-}
-
-.footer-center img:hover {
-  filter: brightness(1.2);
-}
-
-/* Responsive footer stacking */
 @media (max-width: 600px) {
   .site-footer {
     flex-direction: column;
     text-align: center;
   }
+
   .footer-left,
   .footer-center,
   .footer-right {
     min-width: auto;
   }
+
   .footer-center {
     justify-content: center;
   }

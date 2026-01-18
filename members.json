@@ -1,0 +1,66 @@
+[
+
+  {
+    "name": "Sunrise Bakery",
+    "tag": "Fresh Daily Bread",
+    "email": "hello@sunrise.com",
+    "phone": "800-555-1111",
+    "url": "sunrisebakery.com"
+  },
+  {
+    "name": "Towneship Tech",
+    "tag": "Local IT Solutions",
+    "email": "support@tt.com",
+    "phone": "800-555-2222",
+    "url": "towneshiptech.com"
+  },
+  {
+    "name": "Green Valley Realty",
+    "tag": "Finding You Home",
+    "email": "info@gvrealty.com",
+    "phone": "800-555-3333",
+    "url": "greenvalleyrealty.com"
+  },
+  {
+    "name": "Harbor View Café",
+    "tag": "Coffee with a View",
+    "email": "contact@harborviewcafe.com",
+    "phone": "800-555-4444",
+    "url": "harborviewcafe.com"
+  },
+  {
+    "name": "Towneship Fitness Co.",
+    "tag": "Strength • Health • Community",
+    "email": "info@towneshipfitness.com",
+    "phone": "800-555-5555",
+    "url": "towneshipfitness.com"
+  },
+  {
+    "name": "Evergreen Landscaping",
+    "tag": "Naturally Beautiful Yards",
+    "email": "service@evergreenlandscaping.com",
+    "phone": "800-555-6666",
+    "url": "evergreenlandscaping.com"
+  },
+  {
+    "name": "Blue River Outfitters",
+    "tag": "Outdoor Gear & Adventure",
+    "email": "sales@blueriveroutfitters.com",
+    "phone": "800-555-7777",
+    "url": "blueriveroutfitters.com"
+  },
+  {
+    "name": "Towneship Auto Care",
+    "tag": "Reliable Local Mechanics",
+    "email": "service@towneshipauto.com",
+    "phone": "800-555-8888",
+    "url": "towneshipauto.com"
+  },
+  {
+    "name": "Maple Street Books",
+    "tag": "Independent Community Bookstore",
+    "email": "hello@maplestreetbooks.com",
+    "phone": "800-555-9999",
+    "url": "maplestreetbooks.com"
+  }
+]

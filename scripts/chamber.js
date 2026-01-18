@@ -102,7 +102,7 @@ const businesses = [
   },
   {
     name: "Green Valley Realty",
-    tag: "Finding You Home",
+    tag: "Finding You A Home",
     email: "info@gvrealty.com",
     phone: "800-555-3333",
     url: "greenvalleyrealty.com"
