@@ -1,13 +1,17 @@
 /* ======================================================
-   BASE STYLES
+   BASE STYLES (CLS SAFE)
 ====================================================== */
+html {
+  font-size-adjust: 0.5;
+}
+
 body {
   margin: 0;
   font-family: "Merriweather Sans", Arial, sans-serif;
   background-color: #E6F2E6;
   color: #1B3A2D;
+  line-height: 1.4;
 }
-
 
 
 /* ======================================================
@@ -19,6 +23,7 @@ body {
   align-items: center;
   padding: 1rem;
   background-color: #A8D5BA;
+  min-height: 72px; /* CLS FIX */
 }
 
 .header-left {
@@ -64,6 +69,7 @@ body {
   border-radius: 4px;
 }
 
+
 /* ======================================================
    HERO SECTION
 ====================================================== */
@@ -102,6 +108,7 @@ body {
   border-color: #1B3A2D;
 }
 
+
 /* ======================================================
    PAGE TITLE
 ====================================================== */
@@ -109,6 +116,7 @@ body {
   margin: 1rem;
   color: #1B3A2D;
 }
+
 
 /* ======================================================
    INFO GRID
@@ -141,6 +149,7 @@ body {
   margin: 0.5rem 0;
 }
 
+
 /* ======================================================
    BUSINESS CARDS & SPOTLIGHTS
 ====================================================== */
@@ -158,21 +167,26 @@ body {
   border-radius: 4px;
   color: #1B3A2D;
   border: 2px solid #1A331A;
+  min-height: 220px; /* CLS FIX */
 }
 
 .business-card h3 {
   margin-top: 0;
 }
 
+
 /* ======================================================
-   DIRECTORY VIEWS
+   DIRECTORY VIEWS (CLS SAFE)
 ====================================================== */
+#directory-container {
+  min-height: 700px; /* CLS FIX */
+}
+
 #directory-container.grid-view {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  min-height: 400px;
 }
 
 #directory-container.list-view {
@@ -185,8 +199,9 @@ body {
   align-items: center;
 }
 
+
 /* ======================================================
-   FOOTER
+   FOOTER (CLS SAFE)
 ====================================================== */
 footer {
   background-color: #4C7C59;
@@ -204,7 +219,7 @@ footer {
   font-size: 1.25rem;
   flex-wrap: wrap;
   gap: 1rem;
-  min-height: 150px;
+  min-height: 220px; /* CLS FIX */
 }
 
 .footer-left,
@@ -236,6 +251,7 @@ footer {
 .footer-center img:hover {
   filter: brightness(1.2);
 }
+
 
 /* ======================================================
    BUTTONS & TOGGLES
