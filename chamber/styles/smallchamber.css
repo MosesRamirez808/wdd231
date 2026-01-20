@@ -1,0 +1,79 @@
+/* ======================================================
+   RESPONSIVE DESIGN
+====================================================== */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #DDEEDD;
+    z-index: 1000;
+  }
+
+  .nav-menu.open {
+    display: block;
+    background-color: #A8D5BA;
+  }
+
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nav-menu li {
+    text-align: center;
+    border-bottom: 1px solid #B2D3B2;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .spotlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-left,
+  .footer-center,
+  .footer-right {
+    min-width: auto;
+  }
+
+  .footer-center {
+    justify-content: center;
+  }
+}
+
+/* ======================================================
+   DIRECTORY RESPONSIVE GRID
+====================================================== */
+@media (max-width: 900px) {
+  #directory-container.grid-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  #directory-container.grid-view {
+    grid-template-columns: 1fr;
+  }
+}
