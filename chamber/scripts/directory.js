@@ -26,7 +26,7 @@ if (menuButton && navMenu) {
 const container = document.getElementById('directory-container');
 const gridBtn = document.getElementById('gridView');
 const listBtn = document.getElementById('listView');
-const dataURL = 'members.json';
+const dataURL = 'data/members.json';
 
 // Only run directory logic if the container exists
 if (container && gridBtn && listBtn) {
