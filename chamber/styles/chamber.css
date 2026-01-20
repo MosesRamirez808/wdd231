@@ -172,6 +172,7 @@ body {
   justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
+  min-height: 400px;
 }
 
 #directory-container.list-view {
