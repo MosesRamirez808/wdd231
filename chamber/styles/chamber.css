@@ -3,10 +3,12 @@
 ====================================================== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: "Merriweather Sans", Arial, sans-serif;
   background-color: #E6F2E6;
   color: #1B3A2D;
 }
+
+
 
 /* ======================================================
    HEADER & NAVIGATION
@@ -201,6 +203,7 @@ footer {
   font-size: 1.25rem;
   flex-wrap: wrap;
   gap: 1rem;
+  min-height: 150px;
 }
 
 .footer-left,
@@ -244,3 +247,4 @@ footer {
   padding: 0.5rem;
   color: #1B3A2D;
 }
+
