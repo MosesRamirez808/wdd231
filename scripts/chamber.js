@@ -9,7 +9,19 @@ if (menuButton) {
     navMenu.classList.toggle('open');
   });
 }
+const mainNav = document.querySelector('.nav-menu');
+const hambutton = document.querySelector('#menu-toggle');
 
+hambutton.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+    
+    // Optional: Change the icon from ☰ to X when open
+    if (mainNav.classList.contains('open')) {
+        hambutton.textContent = 'X';
+    } else {
+        hambutton.textContent = '☰';
+    }
+});
 // =====================
 // FOOTER DATE
 // =====================

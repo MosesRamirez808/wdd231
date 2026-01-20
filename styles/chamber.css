@@ -167,6 +167,7 @@ body {
 ====================================================== */
 #directory-container.grid-view {
   display: grid;
+  justify-content: center;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
@@ -298,3 +299,50 @@ footer {
     justify-content: center;
   }
 }
+/* Hide button by default (Desktop) */
+#menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #1A331A; /* Matching your AAA dark green */
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  #menu-toggle {
+    display: block; /* Show hamburger icon */
+  }
+
+  .nav-menu {
+    display: none; /* Hide the menu by default on mobile */
+    width: 100%;
+    position: absolute;
+    top: 60px; /* Adjust based on your header height */
+    left: 0;
+    background-color: #DDEEDD; /* Earth tone background */
+    z-index: 1000;
+  }
+
+  /* This class will be added via JavaScript */
+  .nav-menu.open {
+    display: block;
+  }
+
+  .nav-menu ul {
+    flex-direction: column; /* Stack links vertically */
+    padding: 0;
+  }
+
+  .nav-menu li {
+    text-align: center;
+    border-bottom: 1px solid #B2D3B2;
+  }
+
+  .nav-menu a {
+    display: block;
+    padding: 1rem;
+  }
+}
+
