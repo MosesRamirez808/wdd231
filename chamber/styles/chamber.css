@@ -198,6 +198,10 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+.directory-controls {
+  display: flex;
+  gap: 1rem;
+}
 
 
 /* ======================================================
