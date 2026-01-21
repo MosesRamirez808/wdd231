@@ -30,6 +30,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  font-size: larger;
 }
 
 .site-name {
@@ -44,7 +45,7 @@ body {
   border: none;
   cursor: pointer;
   color: #1A331A;
-}
+ }
 
 .nav-menu ul {
   display: flex;
