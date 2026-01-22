@@ -7,6 +7,8 @@ html {
 
 body {
   margin: 0;
+  padding: 0;
+  width: 100%;
   font-family: "Merriweather Sans", Arial, sans-serif;
   background-color: #E6F2E6;
   color: #1B3A2D;
@@ -21,9 +23,10 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 0rem 2rem;
   background-color: #A8D5BA;
-  min-height: 72px; /* CLS FIX */
+  min-height: 72px; 
+  padding-bottom: .2rem;
 }
 
 .header-left {
@@ -70,7 +73,6 @@ body {
   border-radius: 4px;
 }
 
-
 /* ======================================================
    HERO SECTION
 ====================================================== */
@@ -92,8 +94,8 @@ body {
 
 .hero-cta {
   position: absolute;
-  right: 5%;
-  bottom: 20%;
+  top: 75%;
+  left: 85%;
   padding: 0.75rem 1.5rem;
   background-color: #4C7C59;
   border: 2px solid #2F5D45;
@@ -101,7 +103,6 @@ body {
   font-weight: bold;
   color: #F0FFF0;
   cursor: pointer;
-  transition: background-color 0.3s, border-color 0.3s;
 }
 
 .hero-cta:hover {
@@ -211,16 +212,16 @@ body {
 footer {
   background-color: #4C7C59;
   text-align: center;
-  padding: 1rem;
+  padding: .5rem;
   font-size: 0.9rem;
   color: #F0FFF0;
 }
 
-.site-footer {
+.site-bottom {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 0rem 0rem;
   font-size: 1.25rem;
   flex-wrap: wrap;
   gap: 1rem;

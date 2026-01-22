@@ -7,8 +7,8 @@
 <meta name="author" content="Moses Ramirez" >
 <meta name="description" content="Towneship Chamber of Commerce supporting local business and community growth." >
 <link rel="stylesheet" href="styles/chamber.css" >
-<script src="./styles/chamber.css" defer></script>
-<script src="./styles/smallchamber.css" defer></script>
+<link rel="stylesheet" href="styles/smallchamber.css" >
+<script src="scripts/chamber.js" defer></script>
 <link rel="icon" href="favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,40 +34,30 @@
 
   <nav class="nav-menu">
     <ul id="primary-nav">
-      <li><a href="home.html">Home</a></li>
+      <li><a href="home.html" class="active">Home</a></li>
       <li><a href="discover.html">Discover</a></li>
-      <li><a href="directory.html" class="active">Directory</a></li>
+      <li><a href="directory.html">Directory</a></li>
        <li><a href="join.html">Join</a></li>
     </ul>
   </nav>
 </header>
-
-
 <main>
+<!-- Hero Section -->
 
- 
   <section class="hero">
-    <img src="images/towneship.jpg"
-       alt="Towneship Skyline"
-       class="hero-image"
-       srcset="images/towneship.jpg 400w, images/towneship.jpg 800w, images/towneship.jpg 1200w"
-       sizes="100vw" />
-    
-    <section class="hero">
+  <h2 class="visually-hidden"></h2>
+  <img src="images/towneship.jpg" class="hero-image" alt="Towneship Skyline">
   <button class="hero-cta">Keynote Tickets</button>
-  </section>
-  
-
 </section>
 
+  
+<h1 class="page-title"></h1>
 
-<h1 class="page-title">Home</h1>
-</main>
 
 <!-- Info Grid -->
 <section class="info-grid">
 <div class="card events">
-  <h2>Events</h2>
+  <h2>Business Spotlights</h2>
   <h3>Upcoming Family Events</h3>
   <ul>
     <li>The Glass-Bottom Bridge Gala</li>
@@ -80,13 +70,14 @@
 
 
 <div class="card weather">
-<h2>Current Weather</h2>
-<p class="temp">--°F</p>
-<p class="conditions"></p>
-<p class="hi-lo"></p>
-<p class="humidity"></p>
-<p class="sun"></p>
+  <h2>Current Weather</h2>
+  <p class="temp">--°F</p>
+  <p class="conditions"></p>
+  <p class="hi-lo"></p>
+  <p class="humidity"></p>
+  <p class="sun"></p>
 </div>
+
 
 
 <div class="card forecast">
@@ -96,15 +87,11 @@
 <p class="day3"></p>
 </div>
 </section>
+
 </main>
 
-<!-- Business Spotlights -->
-<section class="spotlights"></section>
-
-
-
 <footer>
-  <class="site-footer">
+  <div class="site-bottom">
   <div class="footer-left">
     <p><strong>Towneship Chamber of Commerce</strong></p>
     <p>404 Main Street</p>
@@ -124,5 +111,6 @@
     <p>Last Modification: <span id="lastModified"></span></p>
   </div>
 </footer>
+
 </body>
 </html>
