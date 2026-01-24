@@ -172,5 +172,8 @@ async function loadSpotlights() {
     }
 }
 
+fetch('data/members.json')
+
+
 // Call it once:
 loadSpotlights();
