@@ -129,85 +129,48 @@ updateWeatherUI();
    HOME PAGE – GOLD MEMBER SPOTLIGHTS
 ====================================================== */
 
-const spotlightContainer = document.querySelector('.spotlights');
+async function loadSpotlights() {
+    const spotlightContainer = document.querySelector('.spotlights');
+    if (!spotlightContainer) return;
 
-if (spotlightContainer) {
-    fetch('data/members.json')
-        .then(response => response.json())
-        .then(members => {
+    try {
+        const response = await fetch('data/members.json');
+        if (!response.ok) throw new Error('Failed to fetch members');
+        const members = await response.json();
 
-            // 1. Filter GOLD members only
-            const goldMembers = members.filter(
-                member => member.membership.toLowerCase() === 'gold'
-            );
+        // Filter Gold members only
+        const goldMembers = members.filter(
+            member => member.membership.toLowerCase() === 'gold'
+        );
 
-            // 2. Randomize and limit to 3
-            goldMembers.sort(() => 0.5 - Math.random());
-            const selectedMembers = goldMembers.slice(0, 3);
+        // Randomize and limit to 3
+        goldMembers.sort(() => 0.5 - Math.random());
+        const selectedMembers = goldMembers.slice(0, 3);
 
-            // 3. Display them
-            selectedMembers.forEach(biz => {
-                const card = document.createElement('div');
-                card.classList.add('business-card');
+        // Display them
+        selectedMembers.forEach(biz => {
+            const card = document.createElement('div');
+            card.classList.add('business-card');
 
-                card.innerHTML = `
-                    <span class="membership-badge gold">Gold</span>
-                    <h3>${biz.name}</h3>
-                    <p class="tag">${biz.tag}</p>
-                    <p><strong>Email:</strong> ${biz.email}</p>
-                    <p><strong>Phone:</strong> ${biz.phone}</p>
-                    <p>
-                        <a href="https://${biz.url}" target="_blank" rel="noopener">
-                            ${biz.url}
-                        </a>
-                    </p>
-                `;
+            card.innerHTML = `
+                <span class="membership-badge gold">Gold</span>
+                <h3>${biz.name}</h3>
+                <p class="tag">${biz.tag}</p>
+                <p><strong>Email:</strong> ${biz.email}</p>
+                <p><strong>Phone:</strong> ${biz.phone}</p>
+                <p>
+                    <a href="https://${biz.url}" target="_blank" rel="noopener">
+                        ${biz.url}
+                    </a>
+                </p>
+            `;
 
-                spotlightContainer.appendChild(card);
-            });
-        })
-        .catch(error => console.error('Spotlight Error:', error));
+            spotlightContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Spotlight Fetch Error:', error);
+    }
 }
-/* ======================================================
-   HOME PAGE – GOLD MEMBER SPOTLIGHTS
-====================================================== */
 
-const goldspotlightContainer = document.querySelector('.spotlights');
-
-if (goldspotlightContainer) {
-    fetch('data/members.json')
-        .then(response => response.json())
-        .then(members => {
-
-            // 1. Filter GOLD members only
-            const goldMembers = members.filter(
-                member => member.membership.toLowerCase() === 'gold'
-            );
-
-            // 2. Randomize and limit to 3
-            goldMembers.sort(() => 0.5 - Math.random());
-            const selectedMembers = goldMembers.slice(0, 3);
-
-            // 3. Display them
-            selectedMembers.forEach(biz => {
-                const card = document.createElement('div');
-                card.classList.add('business-card');
-
-                card.innerHTML = `
-                    <span class="membership-badge gold">gold</span>
-                    <h3>${biz.name}</h3>
-                    <p class="tag">${biz.tag}</p>
-                    <p><strong>Email:</strong> ${biz.email}</p>
-                    <p><strong>Phone:</strong> ${biz.phone}</p>
-                    <p>
-                        <a href="https://${biz.url}" target="_blank" rel="noopener">
-                            ${biz.url}
-                        </a>
-                    </p>
-                `;
-
-                goldspotlightContainer.appendChild(card);
-            });
-        })
-        .catch(error => console.error('Spotlight Error:', error));
-}
+// Call it once:
+loadSpotlights();

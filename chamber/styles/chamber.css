@@ -170,6 +170,7 @@ body {
 ====================================================== */
 .spotlights {
   display: grid;
+  min-height: 220px;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding: 1rem;
@@ -205,7 +206,7 @@ body {
   color: #000;
 }
 .membership-badge.silver {
-  background-color: #C0C0C0;
+  background-color: #A9A9A9;
   color: #000;
 }
 .membership-badge.bronze {
