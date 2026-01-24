@@ -42,20 +42,33 @@ if (container && gridBtn && listBtn) {
     }
 
     function displayBusinesses(businesses) {
-        container.innerHTML = '';
-        businesses.forEach(biz => {
-            const card = document.createElement('section');
-            card.classList.add('business-card');
-            card.innerHTML = `
-                <h3>${biz.name}</h3>
-                <p class="tag">${biz.tag}</p>
-                <p><strong>Email:</strong> ${biz.email}</p>
-                <p><strong>Phone:</strong> ${biz.phone}</p>
-                <p><a href="https://${biz.url}" target="_blank" rel="noopener">${biz.url}</a></p>
-            `;
-            container.appendChild(card);
-        });
-    }
+  container.innerHTML = '';
+
+  businesses.forEach(biz => {
+    const card = document.createElement('section');
+    card.classList.add('business-card');
+
+    card.innerHTML = `
+  <span class="membership-badge ${biz.membership.toLowerCase()}">
+    ${biz.membership}
+  </span>
+
+  <h3>${biz.name}</h3>
+  <p class="tag">${biz.tag}</p>
+  <p><strong>Email:</strong> ${biz.email}</p>
+  <p><strong>Phone:</strong> ${biz.phone}</p>
+  <p>
+    <a href="https://${biz.url}" target="_blank" rel="noopener">
+      ${biz.url}
+    </a>
+  </p>
+`;
+
+
+    container.appendChild(card);
+  });
+}
+
 
     gridBtn.addEventListener('click', () => {
         container.className = 'grid-view';
@@ -112,25 +125,89 @@ async function updateWeatherUI() {
 
 updateWeatherUI();
 
-// 2. Static Spotlights (Hardcoded list)
-const spotlightContainer = document.querySelector('.spotlights');
-if (spotlightContainer) {
-    const spotlightMembers = [
-        { name: "Sunrise Bakery", tag: "Fresh Daily Bread", email: "hello@sunrise.com", phone: "800-555-1111", url: "sunrisebakery.com" },
-        { name: "Towneship Tech", tag: "Local IT Solutions", email: "support@tt.com", phone: "800-555-2222", url: "towneshiptech.com" },
-        { name: "Green Valley Realty", tag: "Finding You A Home", email: "info@gvrealty.com", phone: "800-555-3333", url: "greenvalleyrealty.com" }
-    ];
+/* ======================================================
+   HOME PAGE – GOLD MEMBER SPOTLIGHTS
+====================================================== */
 
-    spotlightMembers.forEach(biz => {
-        const card = document.createElement('div');
-        card.classList.add('business-card');
-        card.innerHTML = `
-            <h3>${biz.name}</h3>
-            <p class="tag">${biz.tag}</p>
-            <p><strong>Email:</strong> ${biz.email}</p>
-            <p><strong>Phone:</strong> ${biz.phone}</p>
-            <p><strong>URL:</strong> <a href="https://${biz.url}" target="_blank" rel="noopener">${biz.url}</a></p>
-        `;
-        spotlightContainer.appendChild(card);
-    });
+const spotlightContainer = document.querySelector('.spotlights');
+
+if (spotlightContainer) {
+    fetch('data/members.json')
+        .then(response => response.json())
+        .then(members => {
+
+            // 1. Filter GOLD members only
+            const goldMembers = members.filter(
+                member => member.membership.toLowerCase() === 'gold'
+            );
+
+            // 2. Randomize and limit to 3
+            goldMembers.sort(() => 0.5 - Math.random());
+            const selectedMembers = goldMembers.slice(0, 3);
+
+            // 3. Display them
+            selectedMembers.forEach(biz => {
+                const card = document.createElement('div');
+                card.classList.add('business-card');
+
+                card.innerHTML = `
+                    <span class="membership-badge gold">Gold</span>
+                    <h3>${biz.name}</h3>
+                    <p class="tag">${biz.tag}</p>
+                    <p><strong>Email:</strong> ${biz.email}</p>
+                    <p><strong>Phone:</strong> ${biz.phone}</p>
+                    <p>
+                        <a href="https://${biz.url}" target="_blank" rel="noopener">
+                            ${biz.url}
+                        </a>
+                    </p>
+                `;
+
+                spotlightContainer.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Spotlight Error:', error));
+}
+/* ======================================================
+   HOME PAGE – GOLD MEMBER SPOTLIGHTS
+====================================================== */
+
+const goldspotlightContainer = document.querySelector('.spotlights');
+
+if (goldspotlightContainer) {
+    fetch('data/members.json')
+        .then(response => response.json())
+        .then(members => {
+
+            // 1. Filter GOLD members only
+            const goldMembers = members.filter(
+                member => member.membership.toLowerCase() === 'gold'
+            );
+
+            // 2. Randomize and limit to 3
+            goldMembers.sort(() => 0.5 - Math.random());
+            const selectedMembers = goldMembers.slice(0, 3);
+
+            // 3. Display them
+            selectedMembers.forEach(biz => {
+                const card = document.createElement('div');
+                card.classList.add('business-card');
+
+                card.innerHTML = `
+                    <span class="membership-badge gold">gold</span>
+                    <h3>${biz.name}</h3>
+                    <p class="tag">${biz.tag}</p>
+                    <p><strong>Email:</strong> ${biz.email}</p>
+                    <p><strong>Phone:</strong> ${biz.phone}</p>
+                    <p>
+                        <a href="https://${biz.url}" target="_blank" rel="noopener">
+                            ${biz.url}
+                        </a>
+                    </p>
+                `;
+
+                goldspotlightContainer.appendChild(card);
+            });
+        })
+        .catch(error => console.error('Spotlight Error:', error));
 }

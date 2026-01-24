@@ -169,12 +169,52 @@ body {
   border-radius: 4px;
   color: #1B3A2D;
   border: 2px solid #1A331A;
-  min-height: 220px; /* CLS FIX */
+  min-height: 220px;
+  position: relative;
 }
 
 .business-card h3 {
   margin-top: 0;
 }
+.membership-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0.3rem 0.6rem;
+  font-size: 0.7rem;
+  font-weight: bold;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+}
+.membership-badge.gold {
+  background-color: #FFD700;
+  color: #000;
+}
+.membership-badge.silver {
+  background-color: #C0C0C0;
+  color: #000;
+}
+.membership-badge.bronze {
+  background-color: #CD7F32;
+  color: #fff;
+}
+.membership-badge.np {
+  background-color: #000000;
+  color: #fff;
+}
+
+.business-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #4C7C59;
+  text-decoration: none;
+  font-weight: bold;
+}
+.business-card a:hover {
+  text-decoration: underline;
+}
+
 
 
 /* ======================================================
