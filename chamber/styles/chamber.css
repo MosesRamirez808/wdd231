@@ -234,8 +234,8 @@ body {
   text-decoration: underline;
 }
 
-.membership-cards h3 {
-  font-size: 2rem;
+.membership-cards h2 {
+  font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
 
