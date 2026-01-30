@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Towneship Chamber of Commerce</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles/chamber.css">
+  <script src="scripts/chamber.js" defer></script>
+</head>
+
+<body>
+<header>
+  <h1>Towneship Chamber of Commerce</h1>
+  <nav class="nav-menu">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="discover.html">Discover</a></li>
+    <li><a href="directory.html">Directory</a></li>
+    <li><a href="join.html">Join</a></li>
+  </nav>
+</header>
+
+<main>
+  <section class="thankyou">
+    <h2>Thank You for Joining!</h2>
+    <p>We appreciate your interest in becoming a member of the Towneship Chamber of Commerce.</p>
+
+    <div class="submitted-info">
+      <h3>Your Submitted Information</h3>
+      <p><strong>First Name:</strong> <span id="fname"></span></p>
+      <p><strong>Last Name:</strong> <span id="lname"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Mobile Phone:</strong> <span id="phone"></span></p>
+      <p><strong>Business Name:</strong> <span id="business"></span></p>
+      <p><strong>Submission Date:</strong> <span id="timestamp"></span></p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById('fname').textContent = params.get('fname');
+  document.getElementById('lname').textContent = params.get('lname');
+  document.getElementById('email').textContent = params.get('email');
+  document.getElementById('phone').textContent = params.get('phone');
+  document.getElementById('business').textContent = params.get('business');
+
+  const timestamp = params.get('timestamp');
+  if (timestamp) {
+    document.getElementById('timestamp').textContent =
+      new Date(timestamp).toLocaleString();
+  }
+</script>
+</body>
+</html>

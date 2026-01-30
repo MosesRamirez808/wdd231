@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="A travel bucket list of places I want to visit around the world.">
+  <meta name="author" content="Moses Ramirez">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bucket List | Home</title>
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="/styles/final.css">
+</head>
+
+<body>
+<header>
+  <nav class="nav">
+    <h1>My Bucket List</h1>
+    <button id="menuButton" aria-label="Toggle navigation">☰</button>
+    <ul id="navLinks">
+      <li><a href="final.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Dream Destinations</h2>
+    <p>Places I hope to visit one day.</p>
+  </section>
+
+  <section>
+    <h2>Featured Places</h2>
+    <div id="cardContainer" class="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Moses Ramirez</p>
+</footer>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
+  <div class="modal-content">
+    <button id="closeModal" aria-label="Close">✖</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script src="/scripts/final.js" type="module"></script>
+</body>
+</html>

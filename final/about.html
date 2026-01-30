@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="About this bucket list travel website.">
+  <meta name="author" content="Moses Ramirez">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bucket List | About</title>
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="/styles/final.css">
+</head>
+
+<body>
+<header>
+  <nav class="nav">
+    <h1>My Bucket List</h1>
+    <button id="menuButton" aria-label="Toggle navigation">☰</button>
+    <ul id="navLinks">
+      <li><a href="final.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>About This Project</h2>
+  </section>
+
+  <section>
+    <p>
+      This website is a personal travel bucket list created to demonstrate
+      modern web development skills using HTML, CSS, and JavaScript.
+    </p>
+
+    <p>
+      The site dynamically loads destination data from a JSON file, allows
+      users to view details in modal dialogs, and saves preferences using
+      local storage.
+    </p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Moses Ramirez</p>
+</footer>
+
+<script>
+  document.querySelector('#year').textContent = new Date().getFullYear();
+</script>
+<script src="/scripts/final.js" type="module"></script>
+</body>
+
+</html>

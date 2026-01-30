@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Explore and filter bucket list destinations by continent.">
+  <meta name="author" content="Moses Ramirez">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bucket List | Explore</title>
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="/styles/final.css">
+  
+</head>
+
+<body>
+<header>
+  <nav class="nav">
+    <h1>My Bucket List</h1>
+    <button id="menuButton" aria-label="Toggle navigation">☰</button>
+    <ul id="navLinks">
+      <li><a href="final.html">Home</a></li>
+      <li><a href="explore.html">Explore</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <h2>Explore Destinations</h2>
+  </section>
+
+  <section>
+    <label for="filter">Filter by Continent:</label>
+    <select id="filter">
+      <option value="all">All</option>
+      <option value="Europe">Europe</option>
+      <option value="Asia">Asia</option>
+      <option value="North America">North America</option>
+      <option value="Oceania">Oceania</option>
+      <option value="Arctic">Arctic</option>
+    </select>
+  </section>
+
+  <section>
+    <div id="exploreContainer" class="grid"></div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Moses Ramirez</p>
+</footer>
+
+<!-- Modal -->
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="closeModal">✖</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<script src="/scripts/final.js" type="module"></script>
+</body>
+</html>

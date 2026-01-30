@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "place": "Italy",
+    "continent": "Europe",
+    "highlight": "Rome and Florence",
+    "reason": "History and food"
+  },
+  {
+    "id": 2,
+    "place": "Japan",
+    "continent": "Asia",
+    "highlight": "Tokyo and Kyoto",
+    "reason": "Culture, technology and food"
+  },
+  {
+    "id": 3,
+    "place": "New Zealand",
+    "continent": "Oceania",
+    "highlight": "Mountains and fjords",
+    "reason": "Home of Lord of the Rings"
+  },
+  {
+    "id": 4,
+    "place": "Texas",
+    "continent": "North America",
+    "highlight": "Austin and Big Bend",
+    "reason": "Retirement location"
+  },
+  {
+    "id": 5,
+    "place": "Germany",
+    "continent": "Europe",
+    "highlight": "Berlin and Bavaria",
+    "reason": "Wifes heritage"
+  },
+  {
+    "id": 6,
+    "place": "Greenland",
+    "continent": "Arctic",
+    "highlight": "Ice fjords",
+    "reason": "Natural beauty"
+  }
+]

@@ -20,58 +20,145 @@
   </nav>
 </header>
 
-<main>
-  <h2>Join the Chamber</h2>
+<main class="join-layout">
+  <section>
+    <h2>Join the Chamber</h2>
 
-  <form method="get" action="thankyou.html" class="join-form">
-    <label>
-      First Name
-      <input type="text" name="fname" required>
-    </label>
+    <form method="get" action="thankyou.html" class="join-form">
+      
+      <label>
+        First Name
+        <input type="text" name="fname" required
+          title="Enter your first name"
+          autocomplete="given-name">
+      </label>
 
-    <label>
-      Last Name
-      <input type="text" name="lname" required>
-    </label>
+      <label>
+        Last Name
+        <input type="text" name="lname" required
+          title="Enter your last name"
+          autocomplete="family-name">
+      </label>
 
-    <label>
-      Email
-      <input type="email" name="email" required>
-    </label>
+      <label>
+        Organizational Title
+        <input type="text" name="orgtitle"
+          title="Enter your title (minimum 7 characters)"
+          autocomplete="organization-title"
+          pattern="[A-Za-z\- ]{7,}">
+      </label>
 
-    <label>
-      Phone
-      <input type="tel" name="phone">
-    </label>
+      <label>
+        Email
+        <input type="email" name="email" required
+          title="Enter a valid email address"
+          autocomplete="email"
+          placeholder="example@email.com">
+      </label>
 
-    <label>
-      Business Name
-      <input type="text" name="business">
-    </label>
+      <label>
+        Mobile Phone
+        <input type="tel" name="phone" required
+          title="Enter your mobile phone number"
+          autocomplete="tel">
+      </label>
 
-    <label>
-      Membership Level
-      <select name="membership">
-        <option value="np">NP Membership</option>
-        <option value="bronze">Bronze</option>
-        <option value="silver">Silver</option>
-        <option value="gold">Gold</option>
-      </select>
-    </label>
+      <label>
+        Business / Organization Name
+        <input type="text" name="business" required
+          title="Enter your business name"
+          autocomplete="organization">
+      </label>
 
-    <label>
-      Business Description
-      <textarea name="description"></textarea>
-    </label>
+      <label>
+        Membership Level
+        <select name="membership" title="Select a membership level">
+          <option value="np">NP Membership</option>
+          <option value="bronze">Bronze</option>
+          <option value="silver">Silver</option>
+          <option value="gold">Gold</option>
+        </select>
+      </label>
 
-    <input type="hidden" name="timestamp" id="timestamp">
+      <label>
+        Business Description
+        <textarea name="description"
+          title="Describe your business"></textarea>
+      </label>
 
-    <button type="submit">Join Now</button>
-  </form>
+      <input type="hidden" name="timestamp" id="timestamp">
+
+      <input type="submit" value="Join Now">
+    </form>
+  </section>
+
+  <!-- MEMBERSHIP CARDS -->
+  <aside class="membership-cards">
+    <div class="card">
+      <h3>NP Membership</h3>
+      <p>No fee for non-profits.</p>
+      <a href="#npModal">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h3>Bronze</h3>
+      <p>Basic exposure & events.</p>
+      <a href="#bronzeModal">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h3>Silver</h3>
+      <p>Advertising & training.</p>
+      <a href="#silverModal">Learn More</a>
+    </div>
+
+    <div class="card">
+      <h3>Gold</h3>
+      <p>Premium spotlight benefits.</p>
+      <a href="#goldModal">Learn More</a>
+    </div>
+  </aside>
 </main>
 
 <footer>
   <p>Last Modified: <span id="lastModified"></span></p>
 </footer>
+
+<!-- MODALS -->
+<div id="npModal" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h3>NP Membership Benefits</h3>
+    <p>Free membership, networking events, directory listing.</p>
+  </div>
+</div>
+
+<div id="bronzeModal" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h3>Bronze Benefits</h3>
+    <p>Event discounts, directory listing, basic ads.</p>
+  </div>
+</div>
+
+<div id="silverModal" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h3>Silver Benefits</h3>
+    <p>Training, spotlight ads, event sponsorships.</p>
+  </div>
+</div>
+
+<div id="goldModal" class="modal">
+  <div class="modal-content">
+    <a href="#" class="close">&times;</a>
+    <h3>Gold Benefits</h3>
+    <p>Homepage spotlight, premium ads, VIP events.</p>
+  </div>
+</div>
+
+<script>
+  document.getElementById('timestamp').value = new Date().toISOString();
+</script>
 </body>
 </html>
