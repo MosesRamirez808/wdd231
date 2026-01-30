@@ -1,4 +1,6 @@
-
+/* ======================================================
+   VISUALLY HIDDEN (ACCESSIBILITY)
+====================================================== */
 .visually-hidden {
   position: absolute !important; 
   width: 1px;
@@ -28,7 +30,6 @@ body {
   line-height: 1.4;
   font-size: 1.5rem;
 }
-
 
 /* ======================================================
    HEADER & NAVIGATION
@@ -62,7 +63,7 @@ body {
   border: none;
   cursor: pointer;
   color: #1A331A;
- }
+}
 
 .nav-menu ul {
   display: flex;
@@ -124,7 +125,6 @@ body {
   border-color: #1B3A2D;
 }
 
-
 /* ======================================================
    PAGE TITLE
 ====================================================== */
@@ -132,7 +132,6 @@ body {
   margin: 1rem;
   color: #1B3A2D;
 }
-
 
 /* ======================================================
    INFO GRID
@@ -165,7 +164,6 @@ body {
   margin: 0.5rem 0;
 }
 
-
 /* ======================================================
    BUSINESS CARDS & SPOTLIGHTS
 ====================================================== */
@@ -191,6 +189,7 @@ body {
 .business-card h3 {
   margin-top: 0;
 }
+
 .membership-badge {
   position: absolute;
   top: 8px;
@@ -202,18 +201,22 @@ body {
   color: #fff;
   text-transform: uppercase;
 }
+
 .membership-badge.gold {
   background-color: #FFD700;
   color: #000;
 }
+
 .membership-badge.silver {
   background-color: #A9A9A9;
   color: #000;
 }
+
 .membership-badge.bronze {
   background-color: #CD7F32;
   color: #fff;
 }
+
 .membership-badge.np {
   background-color: #000000;
   color: #fff;
@@ -226,9 +229,11 @@ body {
   text-decoration: none;
   font-weight: bold;
 }
+
 .business-card a:hover {
   text-decoration: underline;
 }
+
 .membership-cards h3 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -238,8 +243,6 @@ body {
   font-size: 1.5rem;
   line-height: 1.5;
 }
-
-
 
 /* ======================================================
    DIRECTORY VIEWS (CLS SAFE)
@@ -264,11 +267,11 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .directory-controls {
   display: flex;
   gap: 1rem;
 }
-
 
 /* ======================================================
    FOOTER (CLS SAFE)
@@ -322,7 +325,6 @@ footer {
   filter: brightness(1.2);
 }
 
-
 /* ======================================================
    BUTTONS & TOGGLES
 ====================================================== */
@@ -335,13 +337,15 @@ footer {
   color: #1B3A2D;
 }
 
-/* =====================
+/* ======================================================
    JOIN PAGE LAYOUT
-===================== */
+====================================================== */
 .join-layout {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center;
+  padding: 2rem 1rem;
 }
 
 @media (min-width: 768px) {
@@ -351,19 +355,9 @@ footer {
   }
 }
 
-/* =====================
+/* ======================================================
    FORM STYLES
-===================== */
-/* CENTER MAIN CONTENT */
-.join-layout {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  padding: 2rem 1rem;
-}
-
-/* CENTER THE FORM */
+====================================================== */
 .join-form {
   display: grid;
   gap: 1rem;
@@ -371,84 +365,63 @@ footer {
   width: 100%;
 }
 
-/* MEMBERSHIP CARDS ROW */
+/* ======================================================
+   MEMBERSHIP CARDS
+====================================================== */
 .membership-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
   max-width: 1000px;
   width: 100%;
+  animation: fadeSlide 1.2s ease-in-out forwards;
 }
 
-/* CARD STYLING */
 .membership-cards .card {
   background: #f5f5f5;
   padding: 1.5rem;
   text-align: center;
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #ccc;
 }
 
-/* HOVER EFFECT */
 .membership-cards .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.membership-cards a {
-  display: inline-block;
-  margin-top: 0.75rem;
-  font-weight: bold;
-  text-decoration: none;
-}
-
-
-/* =====================
-   MEMBERSHIP CARDS
-===================== */
-.membership-cards {
-  display: grid;
-  gap: 1rem;
-  animation: fadeSlide 1.2s ease-in-out forwards;
-}
-
-.card {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  background-color: #f8f8f8;
-}
-
 .card a {
   font-weight: bold;
 }
+
 /* NP */
 .card.np {
   border-top: 6px solid #4caf50;
   background-color: #f3fbf5;
+  color: #2e7d32;
 }
 
 /* Bronze */
 .card.bronze {
   border-top: 6px solid #cd7f32;
   background-color: #fdf4ec;
+  color: #8c5a2b;
 }
 
 /* Silver */
 .card.silver {
   border-top: 6px solid #c0c0c0;
   background-color: #f5f5f5;
+  color: #6e6e6e;
 }
 
 /* Gold */
 .card.gold {
   border-top: 6px solid #d4af37;
   background-color: #fff9e6;
+  color: #a8891c;
 }
-
-.card.bronze h3 { color: #8c5a2b; }
-.card.silver h3 { color: #6e6e6e; }
-.card.gold h3   { color: #a8891c; }
-.card.np h3     { color: #2e7d32; }
 
 /* Animation on load */
 @keyframes fadeSlide {
@@ -462,9 +435,9 @@ footer {
   }
 }
 
-/* =====================
+/* ======================================================
    MODALS
-===================== */
+====================================================== */
 .modal {
   display: none;
   position: fixed;
@@ -483,6 +456,8 @@ footer {
   padding: 2rem;
   max-width: 400px;
   position: relative;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .close {
@@ -492,15 +467,10 @@ footer {
   text-decoration: none;
   font-size: 1.5rem;
 }
-.modal-content {
-  background: #fff;
-  padding: 2rem;
-  max-width: 400px;
-  position: relative;
-  font-size: 1.05rem;
-  line-height: 1.6;
-}
 
+/* ======================================================
+   FLOATING THANK YOU CLUSTER
+====================================================== */
 .thankyou-float {
   position: fixed;
   right: 2rem;
@@ -511,6 +481,7 @@ footer {
   gap: 1rem;
   pointer-events: none; /* clicks pass through */
 }
+
 .thankyou-float span {
   background: #fff9e6;
   color: #a8891c;
@@ -521,6 +492,7 @@ footer {
   animation: floatUpDown 4s ease-in-out infinite;
   opacity: 0.9;
 }
+
 .thankyou-float span:nth-child(2) {
   animation-delay: 0.5s;
   margin-right: 1rem;
@@ -540,6 +512,7 @@ footer {
   animation-delay: 2s;
   margin-right: 0.75rem;
 }
+
 @keyframes floatUpDown {
   0%, 100% {
     transform: translateY(0);
