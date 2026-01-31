@@ -540,3 +540,29 @@ footer {
     transform: translateY(-12px);
   }
 }
+/* ======================================================
+   FLOATING THANK YOU CLUSTER - MOBILE RESPONSIVENESS
+====================================================== */
+@media (max-width: 480px) {
+  .thankyou-float {
+    right: 1rem;
+    bottom: 1rem;
+    top: auto;
+    transform: none;
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .thankyou-float span {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  }
+}
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .thankyou-float span {
+    animation: none !important;
+  }
+}
