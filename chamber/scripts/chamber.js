@@ -138,4 +138,40 @@ businesses.forEach(biz => {
   spotlightContainer.appendChild(card);
 });
 
+// Function to populate submission info on thankyou.html
+function populateThankYouInfo() {
+  if (!window.location.pathname.endsWith('thankyou.html')) return;
+
+  const params = new URLSearchParams(window.location.search);
+
+  document.getElementById('fname').textContent = params.get('fname') || '';
+  document.getElementById('lname').textContent = params.get('lname') || '';
+  document.getElementById('email').textContent = params.get('email') || '';
+  document.getElementById('phone').textContent = params.get('phone') || '';
+  document.getElementById('business').textContent = params.get('business') || '';
+
+  const timestamp = params.get('timestamp');
+  if (timestamp) {
+    document.getElementById('timestamp').textContent =
+      new Date(timestamp).toLocaleString();
+  }
+}
+
+// Run the function after DOM is loaded (since your script uses defer, DOM is ready)
+populateThankYouInfo();
+
+// Set current timestamp into hidden input before form submits
+function setJoinFormTimestamp() {
+  const form = document.querySelector('.join-form');
+  if (!form) return;
+
+  form.addEventListener('submit', () => {
+    const timestampInput = document.getElementById('timestamp');
+    if (timestampInput) {
+      timestampInput.value = new Date().toISOString();
+    }
+  });
+}
+
+setJoinFormTimestamp();
 
