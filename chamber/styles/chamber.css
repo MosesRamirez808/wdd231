@@ -374,7 +374,21 @@ footer {
   gap: 1.5rem;
   max-width: 1000px;
   width: 100%;
-  animation: fadeSlide 1.2s ease-in-out forwards;
+  }
+.membership-cards .card {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardReveal 0.8s ease-out forwards;
+}
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .membership-cards .card {
