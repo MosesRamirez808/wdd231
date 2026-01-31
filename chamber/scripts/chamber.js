@@ -137,3 +137,5 @@ businesses.forEach(biz => {
 
   spotlightContainer.appendChild(card);
 });
+
+
