@@ -1,3 +1,6 @@
+/* =====================
+   RESET & BASE
+   ===================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,13 +8,19 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.7;
+  background-color: #F4F8FC; /* very light blue */
+  color: #0A2540; /* navy – 15.9:1 contrast */
 }
 
+/* =====================
+   HEADER & NAV
+   ===================== */
 header {
-  background: #222;
-  color: #fff;
+  background-color: #0A2540;
+  color: #FFFFFF;
 }
 
 .nav {
@@ -21,70 +30,166 @@ header {
   padding: 1rem;
 }
 
+.nav h1 {
+  font-size: 1.5rem;
+}
+
 #navLinks {
   list-style: none;
   display: none;
 }
 
 #navLinks a {
-  color: #fff;
-  text-decoration: none;
+  color: #FFFFFF;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+#navLinks a:hover {
+  color: #E6F0FF;
 }
 
 #menuButton {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   background: none;
   border: none;
-  color: #fff;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 
+/* Keyboard focus (AAA requirement) */
+:focus-visible {
+  outline: 3px solid #00B4D8;
+  outline-offset: 3px;
+}
+
+/* =====================
+   HERO
+   ===================== */
 .hero {
-  padding: 2rem;
+  padding: 3rem 1rem;
   text-align: center;
+  background-color: #FFFFFF;
 }
 
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  color: #1F3A5F; /* AAA on white */
+}
+
+/* =====================
+   GRID & CARDS
+   ===================== */
 .grid {
   display: grid;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 1.25rem;
+  padding: 1.25rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
 .card {
-  border: 1px solid #ccc;
-  padding: 1rem;
+  background-color: #FFFFFF;
+  border: 1px solid #8FA8C3;
+  padding: 1.25rem;
+  border-radius: 6px;
 }
 
+.card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  margin-bottom: 0.25rem;
+}
+
+.card button {
+  margin-top: 0.75rem;
+  background-color: #0B3C5D;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #072E47;
+}
+
+/* =====================
+   MODAL
+   ===================== */
 .modal {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.7);
-  display: flex;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: none;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .modal-content {
-  background: #fff;
+  background-color: #FFFFFF;
+  color: #0A2540;
   padding: 1.5rem;
   width: 90%;
   max-width: 500px;
+  border-radius: 6px;
+  position: relative;
 }
 
-.hidden {
-  display: none;
+.modal-content button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  cursor: pointer;
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
 }
 
+/* =====================
+   FOOTER
+   ===================== */
+footer {
+  background-color: #0A2540;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* =====================
+   RESPONSIVE NAV
+   ===================== */
 @media (min-width: 768px) {
   #navLinks {
     display: flex;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   #menuButton {
     display: none;
   }
 }
+
 #navLinks.show {
   display: block;
+}
+.badge {
+  display: inline-block;
+  background: #0B3C5D;
+  color: #FFFFFF;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
 }

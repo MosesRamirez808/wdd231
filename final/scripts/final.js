@@ -18,7 +18,7 @@ menuButton?.addEventListener('click', () => {
 
 async function getData() {
   try {
-    const response = await fetch('final.json');
+    const response = await fetch('/data/final.json');
     if (!response.ok) throw new Error('Fetch failed');
     return await response.json();
   } catch (error) {
@@ -30,27 +30,39 @@ function openModalContent(item) {
   modalBody.innerHTML = `
     <h2>${item.place}</h2>
     <p><strong>Continent:</strong> ${item.continent}</p>
-    <p><strong>Highlight:</strong> ${item.highlight}</p>
-    <p><strong>Reason:</strong> ${item.reason}</p>
+    <p><strong>Why Go:</strong> ${item.reason}</p>
+    <p><strong>Description:</strong><br>${item.description ?? 'More details coming soon.'}</p>
+    <p><strong>Best Time to Visit:</strong> ${item.bestTime ?? 'Anytime'}</p>
+    <p><strong>Must-See:</strong> ${item.mustSee ?? 'Top local attractions'}</p>
   `;
-  modal.classList.remove('hidden');
+
+  modal.style.display = 'flex';
 }
 
 closeModal?.addEventListener('click', () => {
-  modal.classList.add('hidden');
+  modal.style.display = 'none';
 });
 
 function displayCards(data, container) {
   container.innerHTML = '';
+
   data.forEach(item => {
     const card = document.createElement('div');
     card.classList.add('card');
 
     card.innerHTML = `
       <h3>${item.place}</h3>
-      <p>${item.highlight}</p>
+      <p><strong>Continent:</strong> ${item.continent}</p>
+      <p><strong>Highlight:</strong> ${item.highlight}</p>
+      <p><strong>Reason:</strong> ${item.reason}</p>
       <button>Details</button>
     `;
+
+    // Must Visit badge (only if featured)
+    if (item.featured) {
+      card.innerHTML =
+        `<span class="badge">A Must Visit</span>` + card.innerHTML;
+    }
 
     card.querySelector('button').addEventListener('click', () => {
       openModalContent(item);
@@ -63,11 +75,21 @@ function displayCards(data, container) {
 async function init() {
   const data = await getData();
 
-  if (cardContainer) displayCards(data, cardContainer);
-  if (exploreContainer) displayCards(data, exploreContainer);
+  // Home page: featured only
+  if (cardContainer) {
+    const featured = data.filter(item => item.featured);
+    displayCards(featured, cardContainer);
+  }
 
+  // Explore page: all destinations
+  if (exploreContainer) {
+    displayCards(data, exploreContainer);
+  }
+
+  // Filter dropdown (Explore)
   filter?.addEventListener('change', () => {
     const value = filter.value;
+
     const filtered =
       value === 'all'
         ? data
@@ -78,4 +100,3 @@ async function init() {
 }
 
 init();
-

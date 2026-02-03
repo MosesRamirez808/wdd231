@@ -1,44 +1,158 @@
 [
   {
-    "id": 1,
-    "place": "Italy",
-    "continent": "Europe",
-    "highlight": "Rome and Florence",
-    "reason": "History and food"
+  "id": 1,
+  "place": "Italy",
+  "continent": "Europe",
+  "highlight": "Rome and Florence",
+  "reason": "History and food",
+  "description": "Italy offers ancient ruins, Renaissance art, and world-class cuisine. From the Colosseum in Rome to the canals of Venice, every corner is steeped in history and culture.",
+  "bestTime": "April-June, September-October",
+  "mustSee": "Colosseum, Vatican City, Tuscany",
+  "featured": true
   },
   {
     "id": 2,
     "place": "Japan",
     "continent": "Asia",
     "highlight": "Tokyo and Kyoto",
-    "reason": "Culture, technology and food"
+    "reason": "Culture, technology and food",
+    "description": "Japan seamlessly blends ancient traditions with cutting-edge technology. Experience the bustling streets of Tokyo, serene temples in Kyoto, and the beauty of cherry blossoms in spring.",
+    "bestTime": "March-May, October-November",
+    "mustSee": "Mount Fuji, Tokyo Tower, Fushimi Inari Shrine",
+    "featured": true
   },
   {
     "id": 3,
     "place": "New Zealand",
     "continent": "Oceania",
     "highlight": "Mountains and fjords",
-    "reason": "Home of Lord of the Rings"
+    "reason": "Home of Lord of the Rings",
+    "description": "New Zealand is a paradise for nature lovers and adventure seekers. Explore stunning landscapes from the fjords of Milford Sound to the peaks of the Southern Alps, and enjoy activities like hiking, bungee jumping, and kayaking.",
+    "bestTime": "December-February",
+    "mustSee": "Milford Sound, Rotorua, Queenstown",
+    "featured": true
   },
   {
     "id": 4,
     "place": "Texas",
     "continent": "North America",
     "highlight": "Austin and Big Bend",
-    "reason": "Retirement location"
+    "reason": "Retirement location",
+    "description": "Texas offers a unique blend of cultural experiences, from the vibrant music scene in Austin to the rugged beauty of Big Bend National Park. Enjoy Tex-Mex cuisine, rodeos, and wide-open spaces.",
+    "bestTime": "March-May, September-November",
+    "mustSee": "The Alamo, San Antonio River Walk, Palo Duro Canyon",
+    "featured": true
   },
   {
     "id": 5,
     "place": "Germany",
     "continent": "Europe",
     "highlight": "Berlin and Bavaria",
-    "reason": "Wifes heritage"
+    "reason": "Wifes heritage",
+    "description": "Germany is rich in history, culture, and natural beauty. Visit the vibrant city of Berlin with its historic landmarks, and explore the fairy-tale castles and scenic landscapes of Bavaria.",
+    "bestTime": "May-September",
+    "mustSee": "Brandenburg Gate, Neuschwanstein Castle, Black Forest",
+    "featured": true
   },
   {
     "id": 6,
     "place": "Greenland",
     "continent": "Arctic",
     "highlight": "Ice fjords",
-    "reason": "Natural beauty"
+    "reason": "Natural beauty",
+    "description": "Greenland offers breathtaking Arctic landscapes, including massive ice fjords, glaciers, and unique wildlife. Experience the Northern Lights, dog sledding, and the rich Inuit culture.",
+    "bestTime": "June-August",
+    "mustSee": "Ilulissat Icefjord, Nuuk, Disko Island",
+    "featured": true
+  },
+  { 
+    "id": 7,
+    "place": "Peru",
+    "continent": "South America",
+    "highlight": "Machu Picchu",
+    "reason": "Ancient ruins and culture",
+    "description": "Peru is home to the ancient Incan city of Machu Picchu, as well as vibrant culture and diverse landscapes. Explore the Amazon rainforest, the Andes mountains, and the rich history of Cusco.",
+    "bestTime": "May-September",
+    "mustSee": "Machu Picchu, Sacred Valley, Lake Titicaca"
+  },
+  {
+    "id": 8,
+    "place": "South Africa",
+    "continent": "Africa",
+    "highlight": "Safari in Kruger National Park",
+    "reason": "Wildlife and natural beauty",
+    "description": "South Africa offers incredible wildlife experiences, stunning landscapes, and vibrant cultures. Go on a safari in Kruger National Park, explore the scenic Garden Route, and visit Cape Town's iconic Table Mountain.",
+    "bestTime": "May-September",
+    "mustSee": "Kruger National Park, Cape Town, Robben Island"
+  },
+  {
+    "id": 9,
+    "place": "France",
+    "continent": "Europe",
+    "highlight": "Paris and French Riviera",
+    "reason": "Art, culture, and cuisine",
+    "description": "France is renowned for its art, culture, and culinary delights. Visit the iconic landmarks of Paris, explore the charming villages of Provence, and relax on the beautiful beaches of the French Riviera.",
+    "bestTime": "April-June, September-November",
+    "mustSee": "Eiffel Tower, Louvre Museum, Mont Saint-Michel"
+  },
+  {
+    "id": 10,
+    "place": "Canada",
+    "continent": "North America",
+    "highlight": "Banff and Vancouver",
+    "reason": "Scenic landscapes and outdoor activities",
+    "description": "Canada boasts stunning natural beauty, from the Rocky Mountains to vibrant cities. Explore Banff National Park, enjoy outdoor activities like hiking and skiing, and experience the multicultural vibe of Vancouver.",
+    "bestTime": "June-September",
+    "mustSee": "Banff National Park, Niagara Falls, CN Tower"
+  },
+  {
+    "id": 11,
+    "place": "Australia",
+    "continent": "Oceania",
+    "highlight": "Sydney and Great Barrier Reef",
+    "reason": "Beaches and marine life",
+    "description": "Australia offers diverse landscapes, from iconic cities to pristine beaches and vibrant coral reefs. Visit Sydney's landmarks, explore the Great Barrier Reef, and experience unique wildlife like kangaroos and koalas.",
+    "bestTime": "September-November, March-May",
+    "mustSee": "Sydney Opera House, Great Barrier Reef, Uluru"
+  },
+  {
+    "id": 12,
+    "place": "Egypt",
+    "continent": "Africa",
+    "highlight": "Cairo and the Pyramids",
+    "reason": "Ancient history and architecture",
+    "description": "Egypt is a land of ancient wonders, from the iconic pyramids of Giza to the temples of Luxor. Explore the rich history along the Nile River, visit bustling markets, and experience the vibrant culture.",
+    "bestTime": "October-April",
+    "mustSee": "Pyramids of Giza, Luxor Temple, Valley of the Kings"
+  },
+  {
+    "id": 13,
+    "place": "Iceland",
+    "continent": "Europe",
+    "highlight": "Reykjavik and Blue Lagoon",
+    "reason": "Unique landscapes and geothermal spas",
+    "description": "Iceland is known for its otherworldly landscapes, including geysers, waterfalls, and glaciers. Relax in the Blue Lagoon's geothermal waters, explore the vibrant capital Reykjavik, and chase the Northern Lights.",
+    "bestTime": "June-August, December-February",
+    "mustSee": "Blue Lagoon, Golden Circle, Vatnajökull National Park"
+  },
+  {
+    "id": 14,
+    "place": "Thailand",
+    "continent": "Asia",
+    "highlight": "Bangkok and Phuket",
+    "reason": "Vibrant culture and beautiful beaches",
+    "description": "Thailand offers a rich cultural experience, delicious cuisine, and stunning beaches. Explore the bustling streets of Bangkok, visit ancient temples, and relax on the beautiful islands of Phuket and Koh Samui.",
+    "bestTime": "November-February",
+    "mustSee": "Grand Palace, Phi Phi Islands, Ayutthaya"
+  },
+  {
+    "id": 15,
+    "place": "Argentina",
+    "continent": "South America",
+    "highlight": "Buenos Aires and Patagonia",
+    "reason": "Diverse landscapes and rich culture",
+    "description": "Argentina boasts diverse landscapes, from the vibrant city life of Buenos Aires to the breathtaking wilderness of Patagonia. Experience tango music, explore glaciers, and enjoy world-class cuisine.",
+    "bestTime": "March-May, September-November",
+    "mustSee": "Iguazu Falls, Perito Moreno Glacier, Tierra del Fuego"
   }
 ]
