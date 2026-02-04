@@ -175,3 +175,33 @@ function setJoinFormTimestamp() {
 
 setJoinFormTimestamp();
 
+// =====================
+// VISITOR MESSAGE
+// =====================
+const visitorMessageEl = document.getElementById('visitor-message');
+
+if (visitorMessageEl) {
+  const now = new Date();
+  const hour = now.getHours();
+  let greeting = "";
+
+  if (hour < 12) {
+    greeting = "Good morning! Welcome to Towneship.";
+  } else if (hour < 18) {
+    greeting = "Good afternoon! Explore what Towneship has to offer.";
+  } else {
+    greeting = "Good evening! Thanks for visiting Towneship.";
+  }
+
+  visitorMessageEl.textContent = greeting;
+}
+let greeting = "Welcome to Towneship!";
+if (hour < 12) greeting = "Good morning!";
+else if (hour < 18) greeting = "Good afternoon!";
+else greeting = "Good evening!";
+
+if (name) {
+  greeting += ` ${name}`;
+}
+
+visitorMessageEl.textContent = greeting;

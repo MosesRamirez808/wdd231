@@ -97,3 +97,267 @@
     animation: none !important;
   }
 }
+
+/* Small screens: single column */
+@media (max-width: 640px) {
+  .discover-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3"
+      "card4"
+      "card5"
+      "card6"
+      "card7"
+      "card8";
+  }
+}
+
+/* Medium screens: 2 columns, custom layout */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .discover-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "card1 card2"
+      "card3 card4"
+      "card5 card6"
+      "card7 card8";
+  }
+}
+
+/* Large screens: 4 columns, custom layout */
+@media (min-width: 1025px) {
+  .discover-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "card1 card2 card3 card4"
+      "card5 card6 card7 card8";
+  }
+}
+
+/* =======================
+   CARD STYLES
+======================= */
+.discover-card {
+  background-color: #E6F2E6;
+  border: 2px solid #2D522D;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discover-card h2 {
+  margin-top: 0;
+  background-color: #4C7C59;
+  color: #F0FFF0;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.discover-card figure {
+  margin: 0.5rem 0;
+}
+
+.discover-card img {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Hover effect for desktop */
+@media (min-width: 641px) {
+  .discover-card img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+  }
+}
+
+.discover-card address {
+  font-style: normal;
+  color: #1B3A2D;
+  margin: 0.5rem 0;
+}
+
+.discover-card p {
+  margin: 0.5rem 0 1rem 0;
+}
+
+.discover-card button {
+  background-color: #4C7C59;
+  color: #F0FFF0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.discover-card button:hover {
+  background-color: #2F5D45;
+}
+
+/* =====================
+   CITY IMAGE GALLERY
+   ===================== */
+.city-gallery {
+  margin: 3rem 0;
+}
+
+.city-gallery h3 {
+  margin-bottom: 1rem;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.gallery-grid img {
+  max-width: 300px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.gallery-grid figure {
+  margin: 0;
+  text-align: center;
+}
+
+.gallery-grid figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+/* =====================
+   FEATURED DOWNTOWN
+===================== */
+.featured-downtown {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+.featured-downtown figure {
+  text-align: center;
+  max-width: 600px;
+}
+
+/* Image styling */
+.featured-downtown img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  border: 4px solid #4C7C59; /* deep green */
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+/* Caption styling */
+.featured-downtown figcaption {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #2F5D45;
+  display: inline-block;
+  padding: 0.5rem 1.25rem;
+  border-radius: 999px;
+  
+}
+@media (min-width: 768px) {
+  .featured-downtown img:hover {
+    transform: scale(1.03);
+    transition: transform 0.3s ease;
+  }
+}
+
+/* =====================
+   CITY STATS LAYOUT
+===================== */
+.city-stats {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+}
+
+.city-stats h3 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Horizontal layout */
+.stats-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Stats list */
+.stats-layout ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.stats-layout li {
+  background-color: #fff9e6;
+  border-left: 6px solid #4C7C59;
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+/* Image */
+.stats-image {
+  flex: 1;
+  max-width: 450px;
+  width: 100%;
+  border-radius: 12px;
+  border: 3px solid #4C7C59;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .stats-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-image {
+    max-width: 100%;
+  }
+}
+/* =====================
+   EXPLORE TOWNESHIP
+===================== */
+.city-gallery {
+  max-width: 1100px;
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.city-gallery h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #1B3A2D;
+}
+
+.city-gallery p {
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+}
