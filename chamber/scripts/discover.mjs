@@ -65,3 +65,27 @@ export const members = [
     membership: "gold"
   }
 ];
+const grid = document.getElementById('discover-grid');
+
+if (grid) {
+  members.forEach(member => {
+    const card = document.createElement('div');
+    card.classList.add('member-card');
+
+    card.innerHTML = `
+      <h2>${member.name}</h2>
+      <p><em>${member.tag}</em></p>
+      <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
+      <p>Phone: ${member.phone}</p>
+      <p>
+        Website:
+        <a href="https://${member.url}" target="_blank" rel="noopener">
+          ${member.url}
+        </a>
+      </p>
+      <p>Membership: ${member.membership}</p>
+    `;
+
+    grid.appendChild(card);
+  });
+}

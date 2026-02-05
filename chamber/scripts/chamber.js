@@ -1,3 +1,5 @@
+
+
 // =====================
 // MOBILE MENU
 // =====================
@@ -30,69 +32,76 @@ document.getElementById('lastModified').textContent = document.lastModified;
 // =====================
 // WEATHER (OpenWeatherMap)
 // =====================
+const tempEl = document.querySelector('.temp');
 const apiKey = '9d9c767a2d93f39568a3933676628c2a';
 const city = 'Wailea,HI,US';
 
-async function getWeather() {
-  try {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
-    const response = await fetch(url);
+if (tempEl) {
+  const apiKey = '9d9c767a2d93f39568a3933676628c2a';
+  const city = 'Wailea,HI,US';
 
-    if (!response.ok) throw new Error(`Weather fetch failed: ${response.status}`);
+  async function getWeather() {
+    try {
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+      const response = await fetch(url);
+      const data = await response.json();
 
-    const data = await response.json();
+      document.querySelector('.temp').textContent =
+        `${Math.round(data.main.temp)}°F`;
 
-    document.querySelector('.temp').textContent =
-      `${Math.round(data.main.temp)}°F`;
+      document.querySelector('.conditions').textContent =
+        data.weather[0].description;
 
-    document.querySelector('.conditions').textContent =
-      data.weather[0].description;
+      document.querySelector('.hi-lo').textContent =
+        `High: ${Math.round(data.main.temp_max)}° | Low: ${Math.round(data.main.temp_min)}°`;
 
-    document.querySelector('.hi-lo').textContent =
-      `High: ${Math.round(data.main.temp_max)}° | Low: ${Math.round(data.main.temp_min)}°`;
+      document.querySelector('.humidity').textContent =
+        `Humidity: ${data.main.humidity}%`;
 
-    document.querySelector('.humidity').textContent =
-      `Humidity: ${data.main.humidity}%`;
-
-    document.querySelector('.sun').textContent =
-      `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})} | Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}`;
-  } catch (error) {
-    console.error('Weather error:', error);
+      document.querySelector('.sun').textContent =
+        `Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}
+         | Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString([], {hour:'2-digit', minute:'2-digit'})}`;
+    } catch (error) {
+      console.error('Weather error:', error);
+    }
   }
+
+  getWeather();
 }
 
-getWeather();
+
 
 // =====================
 // 3-DAY FORECAST
 // =====================
-async function getForecast() {
-  try {
-    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
-    const response = await fetch(forecastURL);
+const day1El = document.querySelector('.day1');
 
-    if (!response.ok) throw new Error(`Forecast fetch failed: ${response.status}`);
+if (day1El) {
+  async function getForecast() {
+    try {
+      const forecastURL =
+        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
+      const response = await fetch(forecastURL);
+      const data = await response.json();
 
-    const data = await response.json();
+      const days = data.list.filter(item =>
+        item.dt_txt.includes("12:00:00")
+      );
 
-    const days = data.list.filter(item => item.dt_txt.includes("12:00:00"));
-
-    if (days.length >= 3) {
       document.querySelector('.day1').textContent =
         `Tomorrow: ${Math.round(days[0].main.temp)}°F`;
-
       document.querySelector('.day2').textContent =
         `Day 2: ${Math.round(days[1].main.temp)}°F`;
-
       document.querySelector('.day3').textContent =
         `Day 3: ${Math.round(days[2].main.temp)}°F`;
+    } catch (error) {
+      console.error('Forecast error:', error);
     }
-  } catch (error) {
-    console.error('Forecast error:', error);
   }
+
+  getForecast();
 }
 
-getForecast();
 
 // =====================
 // BUSINESS SPOTLIGHTS
@@ -157,10 +166,10 @@ function populateThankYouInfo() {
   }
 }
 
-// Run the function after DOM is loaded (since your script uses defer, DOM is ready)
+
 populateThankYouInfo();
 
-// Set current timestamp into hidden input before form submits
+
 function setJoinFormTimestamp() {
   const form = document.querySelector('.join-form');
   if (!form) return;
@@ -175,31 +184,34 @@ function setJoinFormTimestamp() {
 
 setJoinFormTimestamp();
 
-// =====================
-// VISITOR MESSAGE
-// =====================
-document.addEventListener("DOMContentLoaded", function () {
-  const visitorMessageEl = document.getElementById('visitor-message');
-  if (!visitorMessageEl) return; // Exit if element not found
 
-  const now = new Date();
-  const hour = now.getHours();
-  let greeting = "";
+// =====================
+// VISITOR MESSAGE (Last Visit)
+// =====================
+const visitorMessageEl = document.getElementById('visitor-message');
 
-  // Time-based greeting
-  if (hour < 12) {
-    greeting = "Good morning! Welcome to Towneship.";
-  } else if (hour < 18) {
-    greeting = "Good afternoon! Explore what Towneship has to offer.";
+if (visitorMessageEl) {
+  const lastVisit = localStorage.getItem('lastVisit');
+  const now = Date.now();
+  let message;
+
+  if (!lastVisit) {
+    message = "Welcome! Let us know if you have any questions.";
   } else {
-    greeting = "Good evening! Thanks for visiting Towneship.";
+    const daysBetween = Math.floor(
+      (now - Number(lastVisit)) / (1000 * 60 * 60 * 24)
+    );
+
+    if (daysBetween < 1) {
+      message = "Back so soon! Awesome!";
+    } else if (daysBetween === 1) {
+      message = "You last visited 1 day ago.";
+    } else {
+      message = `You last visited ${daysBetween} days ago.`;
+    }
   }
 
-  // Optional: include user name if defined
-  // Make sure `name` is defined somewhere before this code
-  if (typeof name !== "undefined" && name) {
-    greeting += ` ${name}`;
-  }
+  visitorMessageEl.textContent = message;
+  localStorage.setItem('lastVisit', now);
+}
 
-  visitorMessageEl.textContent = greeting;
-});

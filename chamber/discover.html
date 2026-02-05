@@ -11,7 +11,8 @@
   <link rel="icon" href="favicon.ico"> 
   <link rel="stylesheet" href="styles/chamber.css">
   <link rel="stylesheet" href="styles/smallchamber.css">
-  <script src="/scripts/discover.mjs" defer></script>
+  <script src="scripts/discover.mjs" type="module"></script>
+  
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +27,7 @@
 </head>
 
 <body>
-<div id="visitor-message"></div>
+
 <header class="site-header">
   <div class="header-left">
     <span class="site-name">Towneship Chamber of Commerce</span>
@@ -45,7 +46,8 @@
 </header>
 
 <main>
-<section class="discover-intro">  
+  <section id="visitor-message" class="visitor-message"></section>
+  <section class="discover-intro">  
   <h1>Discover Towneship</h1>
     <p>
      Welcome to Towneship - Where Every Moment Tells a Story Step into a place where vibrant culture, breathtaking landscapes, and unforgettable experiences come together. Whether you're here to explore hidden gems, savor local flavors, or simply soak in the atmosphere, Towneship invites you to discover its heart and soul. Your adventure starts here—let's make it unforgettable.
@@ -119,26 +121,6 @@
 </section>
 
 </main>
-<script type="module">
-  import { members } from '/scripts/discover.mjs';
-
-  const grid = document.getElementById('discover-grid');
-
-  members.forEach(member => {
-    const card = document.createElement('div');
-    card.classList.add('member-card');
-    card.innerHTML = `
-      <h2>${member.name}</h2>
-      <p><em>${member.tag}</em></p>
-      <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
-      <p>Phone: ${member.phone}</p>
-      <p>Website: <a href="https://${member.url}" target="_blank">${member.url}</a></p>
-      <p>Membership: ${member.membership}</p>
-    `;
-    grid.appendChild(card);
-  });
-</script>
-
 
 <footer>
     <div class="site-bottom">
