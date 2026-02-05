@@ -11,10 +11,16 @@ if (menuButton) {
     navMenu.classList.toggle('open');
   });
 }
-const mainNav = document.querySelector('.nav-menu');
-const hambutton = document.querySelector('#menu-toggle');
 
-hambutton.addEventListener('click', () => {
+const hambutton = document.querySelector('#menu-toggle');
+const mainNav = document.querySelector('.nav-menu');
+
+if (hambutton && mainNav) {
+  hambutton.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+    hambutton.textContent = mainNav.classList.contains('open') ? 'X' : '☰';
+  });
+}
     mainNav.classList.toggle('open');
     
     // Optional: Change the icon from ☰ to X when open
@@ -23,7 +29,7 @@ hambutton.addEventListener('click', () => {
     } else {
         hambutton.textContent = '☰';
     }
-});
+;
 // =====================
 // FOOTER DATE
 // =====================
