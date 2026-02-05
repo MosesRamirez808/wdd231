@@ -138,20 +138,27 @@ const businesses = [
 
 const spotlightContainer = document.querySelector('.spotlights');
 
-businesses.forEach(biz => {
-  const card = document.createElement('div');
-  card.classList.add('business-card');
+if (spotlightContainer) {
+  businesses.forEach(biz => {
+    const card = document.createElement('div');
+    card.classList.add('business-card');
 
-  card.innerHTML = `
-    <h3>${biz.name}</h3>
-    <p class="tag">${biz.tag}</p>
-    <p><strong>Email:</strong> ${biz.email}</p>
-    <p><strong>Phone:</strong> ${biz.phone}</p>
-    <p><strong>URL:</strong> <a href="https://${biz.url}" target="_blank" rel="noopener">${biz.url}</a></p>
-  `;
+    card.innerHTML = `
+      <h3>${biz.name}</h3>
+      <p class="tag">${biz.tag}</p>
+      <p><strong>Email:</strong> ${biz.email}</p>
+      <p><strong>Phone:</strong> ${biz.phone}</p>
+      <p><strong>URL:</strong>
+        <a href="https://${biz.url}" target="_blank" rel="noopener">
+          ${biz.url}
+        </a>
+      </p>
+    `;
 
-  spotlightContainer.appendChild(card);
-});
+    spotlightContainer.appendChild(card);
+  });
+}
+
 
 // Function to populate submission info on thankyou.html
 function populateThankYouInfo() {
