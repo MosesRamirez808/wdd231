@@ -178,13 +178,15 @@ setJoinFormTimestamp();
 // =====================
 // VISITOR MESSAGE
 // =====================
-const visitorMessageEl = document.getElementById('visitor-message');
+document.addEventListener("DOMContentLoaded", function () {
+  const visitorMessageEl = document.getElementById('visitor-message');
+  if (!visitorMessageEl) return; // Exit if element not found
 
-if (visitorMessageEl) {
   const now = new Date();
   const hour = now.getHours();
   let greeting = "";
 
+  // Time-based greeting
   if (hour < 12) {
     greeting = "Good morning! Welcome to Towneship.";
   } else if (hour < 18) {
@@ -193,15 +195,11 @@ if (visitorMessageEl) {
     greeting = "Good evening! Thanks for visiting Towneship.";
   }
 
+  // Optional: include user name if defined
+  // Make sure `name` is defined somewhere before this code
+  if (typeof name !== "undefined" && name) {
+    greeting += ` ${name}`;
+  }
+
   visitorMessageEl.textContent = greeting;
-}
-let greeting = "Welcome to Towneship!";
-if (hour < 12) greeting = "Good morning!";
-else if (hour < 18) greeting = "Good afternoon!";
-else greeting = "Good evening!";
-
-if (name) {
-  greeting += ` ${name}`;
-}
-
-visitorMessageEl.textContent = greeting;
+});
