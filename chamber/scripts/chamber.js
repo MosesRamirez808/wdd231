@@ -3,8 +3,8 @@
 // =====================
 // MOBILE MENU
 // =====================
-const menuButton = document.querySelector('.menu-toggle');
-const navMenu = document.querySelector('.nav-menu');
+const menuButton = document.querySelector('.menu-button');
+
 
 if (menuButton) {
   menuButton.addEventListener('click', () => {
@@ -33,7 +33,11 @@ if (hambutton && mainNav) {
 // =====================
 // FOOTER DATE
 // =====================
-document.getElementById('lastModified').textContent = document.lastModified;
+const lastModifiedEl = document.getElementById('lastModified');
+if (lastModifiedEl) {
+  lastModifiedEl.textContent = document.lastModified;
+}
+
 
 // =====================
 // WEATHER (OpenWeatherMap)
