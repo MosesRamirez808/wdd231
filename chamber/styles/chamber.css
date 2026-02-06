@@ -473,20 +473,6 @@ footer {
 }
 
 /* ======================================================
-   VISITOR MESSAGE
-====================================================== */
-.visitor-message {
-  
-  background-color: #c7d9c7;
-  border: 2px solid #1B3A2D;
-  padding: 1rem;
-  border-radius: 8px;
-  margin: 1rem 0;
-  font-weight: bold;
-  text-align: center;
-}
-
-/* ======================================================
    DISCOVER INTRO
 ====================================================== */
 .discover-intro {
