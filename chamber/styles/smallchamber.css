@@ -1,6 +1,8 @@
 /* ======================================================
    RESPONSIVE DESIGN
 ====================================================== */
+
+/* Mobile Navigation + Layout */
 @media (max-width: 768px) {
   #menu-toggle {
     display: block;
@@ -38,15 +40,22 @@
     padding: 1rem;
   }
 
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .info-grid,
   .spotlights {
     grid-template-columns: 1fr;
   }
+
+  .stats-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats-image {
+    max-width: 100%;
+  }
 }
 
+/* Directory Grid */
 @media (max-width: 900px) {
   #directory-container.grid-view {
     grid-template-columns: repeat(2, 1fr);
@@ -54,6 +63,10 @@
 }
 
 @media (max-width: 600px) {
+  #directory-container.grid-view {
+    grid-template-columns: 1fr;
+  }
+
   .site-footer {
     flex-direction: column;
     text-align: center;
@@ -64,13 +77,9 @@
   .footer-right {
     min-width: auto;
   }
-
-  #directory-container.grid-view {
-    grid-template-columns: 1fr;
-  }
 }
 
-/* Small screens: single column */
+/* Discover Grid Layouts */
 @media (max-width: 640px) {
   .discover-grid {
     grid-template-columns: 1fr;
@@ -86,7 +95,6 @@
   }
 }
 
-/* Medium screens: 2 columns, custom layout */
 @media (min-width: 641px) and (max-width: 1024px) {
   .discover-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -98,7 +106,6 @@
   }
 }
 
-/* Large screens: 4 columns, custom layout */
 @media (min-width: 1025px) {
   .discover-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -111,7 +118,6 @@
 /* =======================
    CARD STYLES
 ======================= */
-@media (min-width: 0px) {
 .discover-card {
   background-color: #E6F2E6;
   border: 2px solid #2D522D;
@@ -127,8 +133,8 @@
   color: #F0FFF0;
   padding: 0.5rem;
   border-radius: 4px;
- }
 }
+
 .discover-card figure {
   margin: 0.5rem 0;
 }
@@ -141,7 +147,6 @@
   border-radius: 4px;
 }
 
-/* Hover effect for desktop */
 @media (min-width: 641px) {
   .discover-card img:hover {
     transform: scale(1.05);
@@ -156,7 +161,7 @@
 }
 
 .discover-card p {
-  margin: 0.5rem 0 1rem 0;
+  margin: 0.5rem 0 1rem;
 }
 
 .discover-card button {
@@ -182,6 +187,7 @@
   text-align: center;
 }
 
+.city-gallery h2,
 .city-gallery h3 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
@@ -228,36 +234,22 @@
 .featured-downtown {
   display: flex;
   flex-direction: column;
-  align-items: center; /* optional, centers content */
-  text-align: center;  /* optional, matches your design */
+  align-items: center;
+  text-align: center;
   gap: 1rem;
 }
 
-
 .featured-downtown figure {
-  text-align: center;
   max-width: 600px;
 }
 
-/* Image styling */
 .featured-downtown img {
   width: 100%;
   max-width: 500px;
   height: auto;
   border-radius: 12px;
-  border: 4px solid #4C7C59; /* deep green */
+  border: 4px solid #4C7C59;
   box-shadow: 0 12px 25px rgba(0,0,0,0.25);
-}
-
-/* Caption styling */
-.featured-downtown figcaption {
-  margin-top: 1rem;
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #2F5D45;
-  display: inline-block;
-  padding: 0.5rem 1.25rem;
-  border-radius: 999px;
 }
 
 @media (min-width: 768px) {
@@ -268,7 +260,7 @@
 }
 
 /* =====================
-   CITY STATS LAYOUT
+   CITY STATS
 ===================== */
 .city-stats {
   max-width: 1100px;
@@ -281,7 +273,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Horizontal layout */
 .stats-layout {
   display: flex;
   align-items: center;
@@ -289,7 +280,6 @@
   gap: 2rem;
 }
 
-/* Stats list */
 .stats-layout ul {
   list-style: none;
   padding: 0;
@@ -306,7 +296,6 @@
   font-weight: 600;
 }
 
-/* Image */
 .stats-image {
   flex: 1;
   max-width: 450px;
@@ -316,25 +305,6 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-@media (max-width: 768px) {
-  .stats-layout {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .stats-image {
-    max-width: 100%;
-  }
-}
-@media (min-width: 0px) {
-  #visitor-message {
-    min-height: 2rem;
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-bottom: 1rem;
-    text-align: center; /* optional */
-  }
-}
 /* =====================
    GLOBAL IMAGE HOVER
 ===================== */
@@ -348,6 +318,7 @@
     box-shadow: 0 12px 25px rgba(0,0,0,0.25);
   }
 }
+
 /* =====================
    LEARN MORE BUTTON
 ===================== */
