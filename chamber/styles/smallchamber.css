@@ -85,19 +85,6 @@
       "card8";
   }
 }
-@media (hover: hover) and (pointer: fine) {
-  .discover-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.25);
-    border-color: #4C7C59;
-    cursor: pointer;
-  }
-}
-@media (hover: hover) and (pointer: fine) {
-  .discover-card:hover h2 {
-    background-color: #2F5D45;
-  }
-}
 
 /* Medium screens: 2 columns, custom layout */
 @media (min-width: 641px) and (max-width: 1024px) {
@@ -346,5 +333,18 @@
     font-weight: 500;
     margin-bottom: 1rem;
     text-align: center; /* optional */
+  }
+}
+/* =====================
+   GLOBAL IMAGE HOVER
+===================== */
+.hover-zoom {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .hover-zoom:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.25);
   }
 }
