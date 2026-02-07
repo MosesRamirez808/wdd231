@@ -232,3 +232,27 @@ if (visitorMessageEl) {
   localStorage.setItem('lastVisit', now);
 }
 
+// OPEN MODAL
+document.querySelectorAll(".learn-more-btn").forEach(button => {
+  button.addEventListener("click", () => {
+    const modalId = button.dataset.modal;
+    const modal = document.getElementById(modalId);
+    modal.classList.add("open");
+  });
+});
+
+// CLOSE MODAL (X button)
+document.querySelectorAll(".close-modal").forEach(button => {
+  button.addEventListener("click", () => {
+    button.closest(".modal").classList.remove("open");
+  });
+});
+
+// CLOSE MODAL (click outside content)
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", e => {
+    if (e.target === modal) {
+      modal.classList.remove("open");
+    }
+  });
+});
