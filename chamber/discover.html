@@ -57,154 +57,133 @@
     </div>
 <section class="city-gallery">
   <h2>Explore Towneship</h2>
-    <p>Enjoy scenic beaches, weekly farmers markets, year-round festivals and amazing downtown experiences.</p>
+  <p>Enjoy scenic beaches, weekly farmers markets, year-round festivals and amazing downtown experiences.</p>
+
   <div class="gallery-grid">
+
+    <!-- Landmarks -->
     <figure class="image-card">
-  <img src="images/landmark.webp"
-       alt="Towneship City Landmark"
-       width="400"
-       height="300"
-       loading="lazy"
-       class="hover-zoom">
+      <img src="images/landmark.webp" alt="Towneship City Landmark" width="400" height="300" loading="lazy" class="hover-zoom">
+      <button class="learn-more-btn" data-modal="landmark-modal">Learn More</button>
+      <figcaption>City Landmarks</figcaption>
+    </figure>
 
-  <button class="learn-more-btn" data-modal="landmark-modal">
-    Learn More
-  </button>
+    <div id="landmark-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Towneship City Landmarks</h2>
+        <p>These historic landmarks date back to the early 1900s and represent Towneship's cultural roots, architecture, and community pride.</p>
+      </div>
+    </div>
 
-  <figcaption>City Landmarks</figcaption>
-</figure>
-
-<!-- Modal -->
-<div id="landmark-modal" class="modal" aria-hidden="true">
-  <div class="modal-content">
-    <button class="close-modal" aria-label="Close">&times;</button>
-    <h2>Towneship City Landmarks</h2>
-    <p>
-      These historic landmarks date back to the early 1900s and represent
-      Towneship's cultural roots, architecture, and community pride.
-    </p>
-  </div>
-</div>
-
+    <!-- Downtown -->
     <figure class="image-card">
       <img src="images/downtown.webp" alt="Downtown Towneship" width="400" height="300" loading="lazy" class="hover-zoom">
-
-      <button class="learn-more-btn" data-modal="downtown-modal">
-        Learn More
-      </button>
-
-       <div id="downtown-modal" class="modal" aria-hidden="true">
-        <div class="modal-content">
-          <button class="close-modal" aria-label="Close">&times;</button>
-          <h2>Downtown Towneship</h2>
-          <p>
-            Towneship's historic downtown is a vibrant hub of culture, shopping, and dining. With its charming streets, unique boutiques, and local eateries, it offers an unforgettable experience for visitors and residents alike.
-          </p>
-        </div>
-      </div>
+      <button class="learn-more-btn" data-modal="downtown-modal">Learn More</button>
       <figcaption>Downtown Area</figcaption>
     </figure>
+
+    <div id="downtown-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Downtown Towneship</h2>
+        <p>Towneship's historic downtown is a vibrant hub of culture, shopping, and dining. With charming streets, unique boutiques, and local eateries, it offers an unforgettable experience.</p>
+      </div>
+    </div>
+
+    <!-- Farmers Market -->
     <figure class="image-card">
       <img src="images/farmers_market.webp" alt="Towneship Local Farmers Market" width="400" height="300" loading="lazy" class="hover-zoom">
-        <button class="learn-more-btn" data-modal="farmers-modal">
-          Learn More
-        </button>
+      <button class="learn-more-btn" data-modal="farmers-modal">Learn More</button>
       <figcaption>Farmers Markets</figcaption>
     </figure>
-      <div id="farmers-modal" class="modal" aria-hidden="true">
-          <div class="modal-content">
-            <button class="close-modal" aria-label="Close">&times;</button>
-            <h2>Towneship Farmers Markets</h2>
-            <p>
-              Towneship's farmers markets are a vibrant celebration of local agriculture and community spirit. Featuring fresh produce, artisanal goods, and live entertainment, they offer a unique opportunity to connect with local farmers and artisans while enjoying the lively atmosphere.
-            </p>
-          </div>
-        </div>
+
+    <div id="farmers-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Towneship Farmers Markets</h2>
+        <p>Towneship's farmers markets are a vibrant celebration of local agriculture and community spirit.</p>
+      </div>
+    </div>
+
+    <!-- Concerts -->
     <figure class="image-card">
       <img src="images/concert_farmers_market.webp" alt="Towneship Community Concert" width="400" height="300" loading="lazy" class="hover-zoom">
-      <button class="learn-more-btn" data-modal="concert-modal">
-        Learn More
-      </button>
+      <button class="learn-more-btn" data-modal="concert-modal">Learn More</button>
       <figcaption>Community Concert</figcaption>
     </figure>
-      <div id="concert-modal" class="modal" aria-hidden="true">
-          <div class="modal-content">
-            <button class="close-modal" aria-label="Close">&times;</button>
-            <h2>Towneship Community Concerts</h2>
-            <p>
-              Towneship's community concerts are a beloved tradition, bringing together residents and visitors for unforgettable musical experiences. Set in picturesque outdoor venues, these concerts feature a diverse lineup of local and national artists, creating a vibrant atmosphere that celebrates music, culture, and community spirit.
-            </p>
-          </div>
-        </div>  
 
-    </figure>    
+    <div id="concert-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Towneship Community Concerts</h2>
+        <p>Towneship's community concerts bring residents and visitors together for unforgettable musical experiences.</p>
+      </div>
+    </div>
+
+    <!-- Parks -->
     <figure class="image-card">
       <img src="images/park_scene.webp" alt="Towneship Community Park" width="400" height="300" loading="lazy" class="hover-zoom">
-      <button class="learn-more-btn" data-modal="park-modal">
-        Learn More
-      </button>
+      <button class="learn-more-btn" data-modal="park-modal">Learn More</button>
       <figcaption>Community Parks</figcaption>
-      <div id="park-modal" class="modal" aria-hidden="true">
-          <div class="modal-content">
-            <button class="close-modal" aria-label="Close">&times;</button>
-            <h2>Towneship Community Parks</h2>
-            <p>
-              Towneship's community parks are vibrant green spaces that offer a welcoming retreat for residents and visitors alike. With lush landscapes, recreational facilities, and scenic walking trails, these parks provide the perfect setting for outdoor activities, family gatherings, and moments of relaxation amidst nature.
-            </p>
-          </div>
-        </div>
     </figure>
+
+    <div id="park-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Towneship Community Parks</h2>
+        <p>Towneship's community parks offer green spaces, walking trails, and places to relax.</p>
+      </div>
+    </div>
+
+    <!-- Cafes -->
     <figure class="image-card">
       <img src="images/cafe.webp" alt="Towneship Local Cafe" width="400" height="300" loading="lazy" class="hover-zoom">
-      <button class="learn-more-btn" data-modal="cafe-modal">
-        Learn More
-      </button>
+      <button class="learn-more-btn" data-modal="cafe-modal">Learn More</button>
       <figcaption>Local Cafes</figcaption>
-      <div id="cafe-modal" class="modal" aria-hidden="true">
-          <div class="modal-content">
-            <button class="close-modal" aria-label="Close">&times;</button>
-            <h2>Towneship Local Cafes</h2>
-            <p>
-              Towneship's local cafes are vibrant hubs of community and culture, offering a welcoming atmosphere where residents and visitors can connect over expertly crafted coffee and delicious treats. Each cafe boasts its own unique charm, from cozy nooks to lively outdoor patios, making them the perfect spots to relax, socialize, or work while enjoying the rich flavors of locally sourced beverages and pastries.
-            </p>
-          </div>
-        </div>
     </figure>
+
+    <div id="cafe-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Towneship Local Cafes</h2>
+        <p>Towneship's cafes are cozy community hubs serving locally sourced coffee and pastries.</p>
+      </div>
+    </div>
+
+    <!-- Art Galleries -->
     <figure class="image-card">
       <img src="images/art_gallery.webp" alt="Towneship Art Gallery" width="400" height="300" loading="lazy" class="hover-zoom">
-      <button class="learn-more-btn" data-modal="gallery-modal">
-        Learn More
-      </button>
+      <button class="learn-more-btn" data-modal="gallery-modal">Learn More</button>
       <figcaption>Art Galleries</figcaption>
-      <div id="gallery-modal" class="modal" aria-hidden="true">
-          <div class="modal-content">
-            <button class="close-modal" aria-label="Close">&times;</button>
-            <h2>Towneship Art Galleries</h2>
-            <p>
-              Towneship's art galleries are vibrant cultural hubs that showcase a diverse array of artistic expression, from contemporary works to traditional masterpieces. These galleries provide a platform for local and international artists to share their creativity with the community, offering visitors an enriching experience that celebrates the power of art to inspire, provoke thought, and foster connection.
-            </p>
-          </div>
-        </div>
     </figure>
+
+    <div id="gallery-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Towneship Art Galleries</h2>
+        <p>Towneship's art galleries showcase diverse local and international artists.</p>
+      </div>
+    </div>
+
+    <!-- Events -->
     <figure class="image-card">
       <img src="images/community_event.webp" alt="Towneship Community Event" width="400" height="300" loading="lazy" class="hover-zoom">
-      <button class="learn-more-btn" data-modal="event-modal">
-        Learn More
-      </button>
+      <button class="learn-more-btn" data-modal="event-modal">Learn More</button>
       <figcaption>Community Events</figcaption>
-      <div id="event-modal" class="modal" aria-hidden="true">
-          <div class="modal-content">
-            <button class="close-modal" aria-label="Close">&times;</button>
-            <h2>Towneship Community Events</h2>
-            <p>
-              Towneship's community events are vibrant celebrations that bring residents and visitors together to experience the rich culture, creativity, and spirit of the town. From lively festivals and farmers markets to outdoor concerts and art walks, these events offer a diverse array of activities that foster connection, support local businesses, and create unforgettable memories for all who attend.
-            </p>
-          </div>
-        </div>
-      </div>
     </figure>
+
+    <div id="event-modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <h2>Towneship Community Events</h2>
+        <p>Towneship's community events bring people together through festivals, music, and culture.</p>
+      </div>
+    </div>
+
   </div>
 </section>
+
 <section class="featured-downtown">
   <h2>Featured Downtown Experience</h2>
   <p>Discover the charm of Towneship's historic downtown, where unique shops, local eateries, and vibrant culture come together to create an unforgettable experience.</p>
