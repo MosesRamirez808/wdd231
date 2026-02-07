@@ -226,9 +226,12 @@
 ===================== */
 .featured-downtown {
   display: flex;
-  justify-content: center;
-  margin: 3rem 0;
+  flex-direction: column;
+  align-items: center; /* optional, centers content */
+  text-align: center;  /* optional, matches your design */
+  gap: 1rem;
 }
+
 
 .featured-downtown figure {
   text-align: center;
