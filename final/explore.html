@@ -9,7 +9,7 @@
   <title>Bucket List | Explore</title>
 
   <link rel="icon" href="favicon.ico">
-  <link rel="stylesheet" href="/styles/final.css">
+  <link rel="stylesheet" href="styles/final.css">
 
   <meta property="og:title" content="My Bucket List">
   <meta property="og:description" content="A personal travel bucket list website.">
@@ -58,12 +58,12 @@
 </footer>
 
 <!-- Modal -->
-<div id="modal" class="modal hidden">
+<div id="modal" class="modal hidden" role="dialog" aria-modal="true">
   <div class="modal-content">
-    <button id="closeModal">✖</button>
+    <button id="closeModal" aria-label="Close">✖</button>
     <div id="modalBody"></div>
   </div>
 </div>
-<script src="/scripts/final.js" type="module"></script>
+<script src="scripts/final.js" type="module"></script>
 </body>
 </html>
