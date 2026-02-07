@@ -93,6 +93,12 @@
     cursor: pointer;
   }
 }
+@media (hover: hover) and (pointer: fine) {
+  .discover-card:hover h2 {
+    background-color: #2F5D45;
+  }
+}
+
 /* Medium screens: 2 columns, custom layout */
 @media (min-width: 641px) and (max-width: 1024px) {
   .discover-grid {
