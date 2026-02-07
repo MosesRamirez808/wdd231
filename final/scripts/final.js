@@ -18,7 +18,7 @@ menuButton?.addEventListener('click', () => {
 
 async function getData() {
   try {
-    const response = await fetch('/data/final.json');
+    const response = await fetch('data/final.json');
     if (!response.ok) throw new Error('Fetch failed');
     return await response.json();
   } catch (error) {
