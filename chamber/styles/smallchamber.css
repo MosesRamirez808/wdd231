@@ -125,6 +125,8 @@
   padding: 1rem;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 260px;
 }
 
 .discover-card h2 {
@@ -357,7 +359,8 @@
   justify-content: center;
 }
 
-.modal.open {
+.modal.open,
+.modal:target {
   display: flex;
 }
 
@@ -369,6 +372,8 @@
   border-radius: 10px;
   position: relative;
   text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
 }
 
 .close-modal {
