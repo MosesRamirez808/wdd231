@@ -349,7 +349,9 @@ form button:hover {
 
   .carousel-item img {
     width: 80%;     
-    height: auto;   
+    height: auto;
+    aspect-ratio: 300 / 250;
+    height:auto;   
   }
 
   .carousel-item p {
