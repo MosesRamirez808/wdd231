@@ -11,8 +11,8 @@ body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   font-size: 18px;
   line-height: 1.7;
-  background-color: #F4F8FC; /* very light blue */
-  color: #0A2540; /* navy – 15.9:1 contrast */
+  background-color: #F4F8FC; 
+  color: #0A2540; 
 }
 
 /* =====================
@@ -57,7 +57,7 @@ header {
   cursor: pointer;
 }
 
-/* Keyboard focus (AAA requirement) */
+
 :focus-visible {
   outline: 3px solid #00B4D8;
   outline-offset: 3px;
@@ -78,7 +78,7 @@ header {
 }
 
 .hero p {
-  color: #1F3A5F; /* AAA on white */
+  color: #1F3A5F; 
 }
 
 /* =====================
@@ -226,8 +226,8 @@ footer {
 
 .form-container {
   max-width: 600px;
-  margin: 3rem auto;              /* centers horizontally */
-  background-color: #FFFFFF;      /* white card */
+  margin: 3rem auto;              
+  background-color: #FFFFFF;     
   padding: 2rem;
   border-radius: 8px;
   border: 1px solid #8FA8C3;
@@ -278,4 +278,85 @@ form button {
 
 form button:hover {
   background-color: #072E47;
+}
+.carousel-section {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0;
+  background-color: #f4f8fc;
+}
+
+.carousel {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.7s ease-in-out;
+}
+
+.carousel-item {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+}
+
+.carousel-item img {
+  width: 300px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.carousel-item p {
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #0B3C5D;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn.prev {
+  left: 0.5rem;
+}
+
+.carousel-btn.next {
+  right: 0.5rem;
+}
+/* Mobile carousel adjustments */
+@media (max-width: 480px) {
+  .carousel-item {
+    flex-direction: column; 
+    gap: 0.5rem;
+  }
+
+  .carousel-item img {
+    width: 80%;     
+    height: auto;   
+  }
+
+  .carousel-item p {
+    font-size: 0.85rem; 
+  }
+
+.carousel-btn {
+  display: none;
+}
 }

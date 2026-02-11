@@ -115,3 +115,46 @@ async function init() {
     displayCards(filtered, exploreContainer);
   });
 }
+
+// --- Carousel Functionality ---
+document.addEventListener('DOMContentLoaded', () => {
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  const items = Array.from(track.children);
+  let currentIndex = 0;
+
+  function updateCarousel() {
+    if (items.length === 0) return;
+    const width = items[0].getBoundingClientRect().width;
+    track.style.transform = `translateX(-${currentIndex * width}px)`;
+  }
+
+  // Auto-slide every 5 seconds
+  setInterval(() => {
+    currentIndex = (currentIndex + 1) % items.length;
+    updateCarousel();
+  }, 5000);
+
+  // Mobile swipe support
+  let startX = 0;
+  track.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+
+  track.addEventListener('touchend', e => {
+    const endX = e.changedTouches[0].clientX;
+    if (endX - startX > 50) {
+      currentIndex = (currentIndex - 1 + items.length) % items.length;
+    } else if (startX - endX > 50) {
+      currentIndex = (currentIndex + 1) % items.length;
+    }
+    updateCarousel();
+  });
+
+  // Update carousel on resize
+  window.addEventListener('resize', updateCarousel);
+
+  // Initial positioning
+  updateCarousel();
+});
