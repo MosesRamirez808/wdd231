@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submission Received</title>
+  <link rel="stylesheet" href="styles/final.css">
+  
+</head>
+<body>
+
+<main>
+  <h2>Submission Details</h2>
+  <div id="results"></div>
+</main>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const params = new URLSearchParams(window.location.search);
+
+    const name = params.get('name');
+    const destination = params.get('destination');
+    const why = params.get('why');
+    const favorite = params.get('favoriteDestination');
+
+    const resultsDiv = document.querySelector('#results');
+
+    resultsDiv.innerHTML = `
+      <p><strong>Name:</strong> ${name || 'Not provided'}</p>
+      <p><strong>Destination:</strong> ${destination || 'Not provided'}</p>
+      <p><strong>Why:</strong> ${why || 'Not provided'}</p>
+      <p><strong>Your Favorite Destination:</strong> ${favorite || 'Not provided'}</p>
+    `;
+  });
+</script>
+
+
+
+</body>
+</html>

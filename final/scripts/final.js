@@ -23,6 +23,7 @@ async function getData() {
     return await response.json();
   } catch (error) {
     console.error(error);
+    return null;
   }
 }
 
@@ -58,7 +59,6 @@ function displayCards(data, container) {
       <button>Details</button>
     `;
 
-    // Must Visit badge (only if featured)
     if (item.featured) {
       card.innerHTML =
         `<span class="badge">A Must Visit</span>` + card.innerHTML;
@@ -72,23 +72,40 @@ function displayCards(data, container) {
   });
 }
 
+document.addEventListener('DOMContentLoaded', init);
+
 async function init() {
   const data = await getData();
+  if (!data) return;
 
-  // Home page: featured only
+  // Restore saved filter
+  const savedFilter = localStorage.getItem('selectedContinent');
+  if (savedFilter && filter) {
+    filter.value = savedFilter;
+  }
+
+  // Home page
   if (cardContainer) {
     const featured = data.filter(item => item.featured);
     displayCards(featured, cardContainer);
   }
 
-  // Explore page: all destinations
+  // Explore page
   if (exploreContainer) {
-    displayCards(data, exploreContainer);
+    const value = filter?.value || 'all';
+    const filtered =
+      value === 'all'
+        ? data
+        : data.filter(item => item.continent === value);
+
+    displayCards(filtered, exploreContainer);
   }
 
-  // Filter dropdown (Explore)
+  // Filter dropdown
   filter?.addEventListener('change', () => {
     const value = filter.value;
+
+    localStorage.setItem('selectedContinent', value);
 
     const filtered =
       value === 'all'
@@ -98,6 +115,3 @@ async function init() {
     displayCards(filtered, exploreContainer);
   });
 }
-
-document.addEventListener('DOMContentLoaded', init);
-
