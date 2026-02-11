@@ -170,9 +170,11 @@ document.addEventListener('DOMContentLoaded', () => {
       hour: '2-digit', 
       minute: '2-digit', 
       second: '2-digit',
-      hour12: false  // 24-hour format, remove if you want 12-hour AM/PM
+      hour12: false  // 24-hour format
     };
     
     lastModified.textContent = modified.toLocaleString(undefined, options);
   }
-});
+}); 
+
+

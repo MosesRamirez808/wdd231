@@ -1,27 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Form submission results for bucket list destination.">
+  <meta name="author" content="Moses Ramirez">
+
   <title>Submission Received</title>
+  
+  <link rel="icon" href="favicon.ico">
   <link rel="stylesheet" href="styles/final.css">
   <script src="scripts/lastModified.js"></script>
+  <script src="scripts/final.js" type="module"></script>
+</head>
 
+<body>
+<header>
   <nav class="nav">
     <h1>My Bucket List</h1>
-    <button id="menuButton" aria-label="Toggle navigation">☰</button>
     <ul id="navLinks">
       <li><a href="final.html">Home</a></li>
-      <li><a href="explore.html" class="active">Explore</a></li>
+      <li><a href="explore.html">Explore</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Submit</a></li>
+      <li><a href="contact.html" class="active">Submit</a></li>
     </ul>
   </nav>
-  
-</head>
-<body>
-
+</header>
 <main>
+
   <h2>Submission Details</h2>
   <div id="results"></div>
 </main>
@@ -31,7 +37,7 @@
     const params = new URLSearchParams(window.location.search);
 
     const name = params.get('name');
-    const destination = params.get('destination');
+    const link = params.get('link');
     const why = params.get('why');
     const favorite = params.get('favoriteDestination');
 
@@ -39,7 +45,7 @@
 
     resultsDiv.innerHTML = `
       <p><strong>Name:</strong> ${name || 'Not provided'}</p>
-      <p><strong>Link:</strong> ${destination || 'Not provided'}</p>
+      <p><strong>Link:</strong> ${link || 'Not provided'}</p>
       <p><strong>Why:</strong> ${why || 'Not provided'}</p>
       <p><strong>Your Favorite Destination:</strong> ${favorite || 'Not provided'}</p>
     `;
