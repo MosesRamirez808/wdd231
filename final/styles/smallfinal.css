@@ -1,0 +1,22 @@
+/* Mobile carousel adjustments */
+@media (max-width: 480px) {
+  .carousel-item {
+    flex-direction: column; 
+    gap: 0.5rem;
+  }
+
+  .carousel-item img {
+    width: 80%;     
+    height: auto;
+    aspect-ratio: 300 / 250;
+    height:auto;   
+  }
+
+  .carousel-item p {
+    font-size: 0.85rem; 
+  }
+
+.carousel-btn {
+  display: none;
+}
+}
