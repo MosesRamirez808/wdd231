@@ -20,3 +20,11 @@
   display: none;
 }
 }
+.youtube-link {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.youtube-link:hover {
+  text-decoration: underline;
+}
